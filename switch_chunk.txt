@@ -1,0 +1,15 @@
+﻿  } else if (brand === 'construccion') {
+    document.getElementById('sec-construccion').classList.add('active');
+    selector.classList.add('minimized');
+    panels.forEach(p => p.classList.remove('active-brand'));
+    document.querySelector('.sel-panel.construccion').classList.add('active-brand');
+    selLogo.classList.add('brand-active');
+    if (construccionBgImg) construccionBgImg.classList.add('visible');
+    ceepBgImg.classList.remove('visible');
+    glBgImg.classList.remove('visible');
+    setTimeout(() => {
+      const content = document.getElementById('content');
+      const top = content.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 420);
+  }

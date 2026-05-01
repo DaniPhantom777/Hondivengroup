@@ -1,0 +1,187 @@
+﻿<div id="sec-construccion" class="brand-section" style="--accent:#0045e6;--form-accent:#0045e6">
+
+  <section class="hook">
+    <div class="hook-tag">HONDIVEN CONSTRUCCIÓN — Ecosistema Integral</div>
+    <h1 class="hook-title">NO CONSTRUIMOS<br>OBRAS.<br>CONSTRUIMOS<br>CONTROL TOTAL<br>SOBRE SU<br>INVERSIÓN.</h1>
+    <div class="hook-right">
+      <p>Transformamos proyectos complejos en resultados ejecutables, financiables y rentables, integrando ingeniería, financiamiento y ejecución bajo un solo ecosistema.</p>
+      <a href="#" class="hook-cta" style="border-color:#0045e6">Solicitar Evaluación de Proyecto</a>
+    </div>
+  </section>
+
+  <div class="metrics">
+    <div class="metric-card accent" style="background:linear-gradient(135deg,#010d2a,#022883)!important;border-left:3px solid #0045e6">
+      <div class="metric-val">+1,000</div><div class="metric-label" style="color:rgba(77,127,255,0.8)">MW en proyectos energéticos</div>
+    </div>
+    <div class="metric-card"><div class="metric-val">+1M</div><div class="metric-label">m² desarrollados</div></div>
+    <div class="metric-card"><div class="metric-val">+150</div><div class="metric-label">Proyectos públicos evaluados</div></div>
+    <div class="metric-card"><div class="metric-val">+50</div><div class="metric-label">Años en infraestructura</div></div>
+  </div>
+
+  <!-- MODELO END TO END -->
+  <div class="sec-header"><h2 class="sec-title">MODELO HONDIVEN</h2><span style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase">Un solo sistema. Un solo responsable.</span></div>
+  <div class="how-section">
+    <div class="how-grid" style="grid-template-columns:repeat(6,1fr)">
+      <div class="how-card">
+        <div class="how-step" data-n="1" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Evaluación Integral</div>
+        <div class="how-desc">Técnica, financiera, legal y territorial. Identificamos riesgos antes de ejecutar.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="2" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Ingeniería y Diseño</div>
+        <div class="how-desc">Soluciones eficientes y optimizadas. Value engineering aplicado.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="3" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Análisis Territorial</div>
+        <div class="how-desc">Riesgos, licencias y entorno. Bancabilidad y acceso a capital.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="4" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Estructuración Financiera</div>
+        <div class="how-desc">Proyectos diseñados para ser financiables desde el inicio.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="5" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Ejecución</div>
+        <div class="how-desc">Construcción + tecnología + control financiero en tiempo real.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="6" style="color:#4d7fff">Fase</div>
+        <div class="how-name">Supervisión Total</div>
+        <div class="how-desc">Transparencia y trazabilidad total. Un solo responsable.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LÍNEAS DE SERVICIO -->
+  <div class="sec-header"><h2 class="sec-title">LÍNEAS DE SERVICIO</h2></div>
+  <div class="services-list">
+    <div class="service-row"><span class="service-num" style="color:#4d7fff">01</span><div class="service-info"><span class="service-name">Ingeniería de Proyectos</span><span class="service-desc">Diseño estructural · Optimización técnica · Value engineering</span></div><span class="service-kpi" style="color:#0045e6">→</span></div>
+    <div class="service-row"><span class="service-num" style="color:#4d7fff">02</span><div class="service-info"><span class="service-name">Construcción Integral</span><span class="service-desc">Obras civiles e industriales · Infraestructura pública y privada · Ejecución con control financiero</span></div><span class="service-kpi" style="color:#0045e6">→</span></div>
+    <div class="service-row"><span class="service-num" style="color:#4d7fff">03</span><div class="service-info"><span class="service-name">Mantenimiento Estratégico</span><span class="service-desc">Mantenimiento preventivo y correctivo · Gestión de activos · Optimización de costos operativos</span></div><span class="service-kpi" style="color:#0045e6">→</span></div>
+    <div class="service-row"><span class="service-num" style="color:#4d7fff">04</span><div class="service-info"><span class="service-name">Proyectos Especializados</span><span class="service-desc">Energía (solar, eólica, eficiencia) · Infraestructura industrial · Proyectos inmobiliarios</span></div><span class="service-kpi" style="color:#0045e6">→</span></div>
+  </div>
+
+  <!-- DIFERENCIAL -->
+  <div class="diff-section">
+    <div class="diff-left">
+      <div class="diff-eyebrow" style="color:#4d7fff">Nuestro diferencial</div>
+      <h3 class="diff-title">"HONDIVEN NO ES UNA CONSTRUCTORA. ES UN ECOSISTEMA QUE HACE VIABLE LO QUE OTROS SOLO PRESUPUESTAN."</h3>
+      <p class="diff-body">No somos intermediarios. No somos consultores externos. Somos el núcleo técnico que asegura la ejecución con control total desde la idea hasta la operación.</p>
+    </div>
+    <div class="diff-right">
+      <div class="diff-pillars">
+        <div class="diff-pillar"><div class="diff-pillar-bar" style="background:#0045e6"></div><div><div class="diff-pillar-name">Ingeniería + Finanzas + Territorio</div><div class="diff-pillar-sub">No solo obra — integración total del proyecto.</div></div></div>
+        <div class="diff-pillar"><div class="diff-pillar-bar" style="background:#0045e6"></div><div><div class="diff-pillar-name">Proyectos Financiables</div><div class="diff-pillar-sub">Diseñados para bancabilidad y acceso a capital desde el inicio.</div></div></div>
+        <div class="diff-pillar"><div class="diff-pillar-bar" style="background:#0045e6"></div><div><div class="diff-pillar-name">Supervisión con Trazabilidad</div><div class="diff-pillar-sub">Control total con un solo interlocutor para todo el proyecto.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTORES -->
+  <div class="sec-header"><h2 class="sec-title">SECTORES</h2></div>
+  <div class="clients-section">
+    <p class="clients-intro">Atendemos desde grandes operaciones hasta proyectos individuales con el mismo estándar de control e ingeniería.</p>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Industria y Consumo Masivo</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Minería y Energía</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Infraestructura Pública</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Inmobiliario y Urbanismo</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Logística y Puertos</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Empresas Comerciales</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Personas y Hogares</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Industria y Consumo Masivo</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Minería y Energía</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Infraestructura Pública</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Inmobiliario y Urbanismo</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Logística y Puertos</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Empresas Comerciales</div>
+        <div class="marquee-item"><span class="marquee-dot" style="--mdot:#0045e6"></span>Personas y Hogares</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIERRE -->
+  <div class="closing">
+    <div class="closing-left">
+      <div>
+        <div class="closing-sub" style="color:#4d7fff">Convertimos proyectos en decisiones seguras.</div>
+        <h2 class="closing-title">SI SU PROYECTO NO TIENE CONTROL TOTAL… ESTÁ PERDIENDO INVERSIÓN HOY.</h2>
+      </div>
+      <div class="closing-pill">
+        <span style="color:#0045e6">✓</span> Eliminamos sobrecostos ocultos
+      </div>
+      <div class="closing-pill">
+        <span style="color:#0045e6">✓</span> Reducimos riesgos antes de ejecutar
+      </div>
+      <div class="closing-pill">
+        <span style="color:#0045e6">✓</span> Un solo interlocutor para todo el proyecto
+      </div>
+    </div>
+    <div class="closing-right">
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;font-weight:600">Hablar con un Director Técnico</p>
+      <a href="#" class="btn-primary" style="background:#0045e6;color:#fff">Solicitar Evaluación de Proyecto →</a>
+      <a href="#" class="btn-outline">Agendar Reunión →</a>
+    </div>
+  </div>
+
+  <!-- FORMULARIO CONSTRUCCIÓN -->
+  <div class="contact-section" style="--form-accent:#0045e6">
+    <span class="contact-badge">¿Listo para controlar su inversión?</span>
+    <h2 class="contact-title">Su proyecto<br><span style="color:#4d7fff">empieza aquí.</span></h2>
+    <p class="contact-sub">Hable directamente con nuestro equipo estratégico y descubra cómo convertir su proyecto en una decisión segura.</p>
+    <form class="contact-form" onsubmit="handleForm(event,'construccion')">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nombre completo</label>
+          <input class="form-input" type="text" placeholder="Su nombre" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Correo electrónico</label>
+          <input class="form-input" type="email" placeholder="su@correo.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Empresa / Organización</label>
+          <input class="form-input" type="text" placeholder="Nombre de su empresa">
+        </div>
+        <div class="form-group">
+          <label class="form-label">¿Qué necesita?</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option>Evaluación integral de proyecto</option>
+            <option>Ingeniería y diseño</option>
+            <option>Construcción integral</option>
+            <option>Mantenimiento estratégico</option>
+            <option>Proyecto energético / inmobiliario</option>
+            <option>Hablar con un Director Técnico</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Describa su proyecto</label>
+        <textarea class="form-textarea" placeholder="Ej: proyecto industrial de 5,000 m², necesitamos evaluación técnica y estructuración financiera..."></textarea>
+      </div>
+      <div class="form-divider"></div>
+      <button class="form-submit" style="background:#0045e6;color:#fff">
+        Enviar proyecto para evaluación <span class="arrow">→</span>
+      </button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-email">contacto@hondiven.com</div>
+    <div class="footer-phone" style="color:#4d7fff">HONDIVEN CONSTRUCCIÓN</div>
+    <div class="footer-links">
+      <a href="#">LinkedIn ↗</a>
+      <a href="#">Instagram ↗</a>
+      <a href="#">WhatsApp ↗</a>
+    </div>
+    <div class="footer-copy">HONDIVEN CONSTRUCCIÓN © 2026 — Ecosistema Integral de Proyectos</div>
+  </footer>
+
+</div><!-- end sec-construccion -->

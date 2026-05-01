@@ -1,0 +1,7 @@
+﻿  } else if (brand === 'construccion') {
+    b.classList.add('banner-construccion');
+    b.style.setProperty('--banner-accent','#0045e6');
+    msg.innerHTML = 'Si su proyecto no tiene <em>control total</em>, está perdiendo inversión <em>hoy mismo</em>.';
+    cta.style.background = '#0045e6';
+    cta.style.color = '#fff';
+    cta.textContent = 'Evaluar proyecto →';

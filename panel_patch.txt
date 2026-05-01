@@ -1,0 +1,12 @@
+﻿    <div class="sel-panel construccion" onclick="switchBrand('construccion')" role="tab" aria-selected="false" aria-label="HONDIVEN Construcción — Ecosistema Integral de Proyectos" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')switchBrand('construccion')">
+      <div class="pbg" aria-hidden="true"></div>
+      <div class="panel-bg-img" id="construccion-bg-img"></div>
+      <div class="panel-person construccion-person" aria-hidden="true"></div>
+      <div class="pcontent">
+        <span class="plabel">Hondiven</span>
+        <span class="pname">CONSTRUC-<br>CIÓN</span>
+        <span class="psub">Ecosistema Integral de Proyectos</span>
+        <button class="pcta" aria-label="Ver más sobre Construcción">Saber más</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+﻿/* ═══════════════════════════════
+   CONSTRUCCIÓN — paleta azul
+═══════════════════════════════ */
+:root {
+  --blue-dark: #022883;
+  --blue:      #0045e6;
+  --blue-light:#4d7fff;
+}
+.sel-panel.construccion .pbg {
+  background: linear-gradient(170deg,#010d2a 0%,#022883 40%,#0045e6 85%,#4d7fff 100%);
+}
+.sel-panel.construccion .pname { color: #4d7fff; }
+.sel-panel.construccion .pcta  { background: #0045e6; }
+#selector.minimized .sel-panel.construccion {
+  background: linear-gradient(135deg, #0045e6 0%, #022883 100%) !important;
+}
+#sec-construccion { --accent:#0045e6; --form-accent:#0045e6; background:#0a0a0c; }
+#sec-construccion .hook-tag { color:#4d7fff; }
+#sec-construccion .hook-tag::before { background:#4d7fff; }
+#sec-construccion .hook-cta { border-color:#0045e6; color:#fff; }
+#sec-construccion .metric-card.accent {
+  background: linear-gradient(135deg,#010d2a,#022883) !important;
+  border-left: 3px solid #0045e6;
+}
+#sec-construccion .service-num { color:#4d7fff; }
+#sec-construccion .service-row:hover .service-name { color:#4d7fff; }
+#sec-construccion .service-kpi { color:#0045e6; }
+#sec-construccion .rtab.active { border-bottom-color:#0045e6; color:#fff; }
+#sec-construccion .result-num { color:#0045e6; }
+#sec-construccion .how-step { color:#4d7fff; }
+#sec-construccion .how-step::before { background:#0045e6; color:#fff; }
+#sec-construccion .how-card:not(:last-child)::after { color:#4d7fff; }
+#sec-construccion .diff-eyebrow { color:#4d7fff; }
+#sec-construccion .diff-pillar-bar { background:#0045e6; }
+#sec-construccion .closing-sub { color:#4d7fff; }
+#sec-construccion .btn-primary { background:#0045e6; color:#fff; }
+#sec-construccion .btn-primary:hover { background:#4d7fff; color:#fff; }
+#sec-construccion .contact-title span { color:#4d7fff; }
+#sec-construccion .form-input:focus,
+#sec-construccion .form-select:focus,
+#sec-construccion .form-textarea:focus { border-color:#0045e6; }
+#sec-construccion .form-submit { background:#0045e6 !important; color:#fff; }
+#sec-construccion .form-submit:hover { background:#4d7fff !important; }
+#sec-construccion .marquee-dot { background:#0045e6 !important; }
+.banner-construccion .banner-inner { background:#010d2a; border-top-color:#0045e6; }
+
