@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HONDIVEN — Reducimos costos, optimizamos tu operación</title>
-<meta name="description" content="HONDIVEN es el board técnico-ejecutivo que tu empresa necesita: ahorro energético, control financiero, infraestructura e IA aplicada al crecimiento. Resultados desde el primer mes.">
-<meta property="og:title" content="HONDIVEN — Reducimos costos, optimizamos tu operación">
-<meta property="og:description" content="Energía, finanzas, infraestructura y personas — cada punto impacta tu EBITDA. Conoce HONDIVEN, CEEP y Grounding Lab.">
+<title>HONDIVEN — Board Técnico-Ejecutivo | Reducimos costos desde el mes 1.</title>
+<meta name="description" content="Somos el board técnico-ejecutivo externo que tu empresa necesita. Reducimos costos operativos, optimizamos EBITDA y protegemos tu rentabilidad con resultados medibles desde el primer mes.">
+<meta property="og:title" content="HONDIVEN — Board Técnico-Ejecutivo | Reducimos costos desde el mes 1.">
+<meta property="og:description" content="Somos el board técnico-ejecutivo externo que tu empresa necesita. Reducimos costos operativos, optimizamos EBITDA y protegemos tu rentabilidad con resultados medibles desde el primer mes.">
 <meta property="og:image" content="https://hondiven.com/og-image.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@300;400;500;600&family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -479,8 +479,11 @@ body {
 .sel-panels:hover .sel-panel { flex: 0.55; }
 .sel-panels:hover .sel-panel:hover { flex: 1.45; }
 
-.sel-panel .pbg { position: absolute; inset: 0; }
-/* Gradiente más claro arriba para que el personaje (fondo negro) sea visible */
+/* Capa de color sólido base — siempre visible, z-index bajo */
+.sel-panel .pbg { position: absolute; inset: 0; z-index: 1; }
+/* Colores sólidos por panel */
+.sel-panel.transporte  .pbg { background: linear-gradient(170deg,#051f12 0%,#0B3D2E 45%,#0f5c3e 80%,#00A86B 100%); }
+.sel-panel.construccion .pbg { background: linear-gradient(170deg,#010d2a 0%,#022883 40%,#0045e6 85%,#4d7fff 100%); }
 .sel-panel.ceep .pbg { background: linear-gradient(170deg,#3d1200 0%,#7a2c00 40%,#E8550A 85%,#ff6a1a 100%); }
 .sel-panel.gl   .pbg { background: linear-gradient(170deg,#2a0010 0%,#7a0020 40%,#D0103A 85%,#e8203e 100%); }
 
@@ -507,17 +510,23 @@ body {
 .sel-panel .pname {
   display: block;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(20px,3vw,40px); font-weight: 900;
-  font-style: italic; text-transform: uppercase; line-height: 1;
+  font-size: clamp(16px,2.2vw,28px); font-weight: 900;
+  font-style: italic; text-transform: uppercase; line-height: 1.1;
   transition: font-size 0.5s;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
+  white-space: normal;
 }
-#selector.minimized .sel-panel .pname { font-size: 16px; }
-.sel-panel.ceep .pname { color: var(--orange); }
-.sel-panel.gl   .pname { color: var(--red); }
+#selector.minimized .sel-panel .pname { font-size: 14px; }
+/* Todos los textos de panels en blanco puro — visibles sobre imagen de fondo */
+.sel-panel .plabel { color: rgba(255,255,255,0.75) !important; }
+.sel-panel .pname  { color: #ffffff !important; }
+.sel-panel .psub   { color: #ffffff !important; }
 .sel-panel .psub {
   display: block; font-size: 10px; font-weight: 600;
-  letter-spacing: 0.16em; color: rgba(255,255,255,0.38);
-  text-transform: uppercase; margin-top: 4px; font-style: italic;
+  letter-spacing: 0.16em;
+  text-transform: uppercase; margin-top: 6px; font-style: italic;
 }
 #selector.minimized .sel-panel .psub { display: none; }
 .sel-panel .pcta {
@@ -895,64 +904,78 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 .footer-copy { margin-top: 40px; font-size: 11px; color: rgba(255,255,255,0.15); letter-spacing: 0.1em; }
 
 /* ═══════════════════════════════
-   HONDIVEN SILVER PALETTE
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HONDIVEN LUXURY CORPORATE TECH PALETTE
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #sec-hondiven {
-  --accent: #A8B4BC;
-  --accent-bright: #C8D4DC;
-  --accent-dark: #6a7a84;
+  background: #04152D;
+  --accent: #D4A84F;
+  --accent-bright: #F5D38A;
+  --accent-dark: #A17F3B;
+  --tech-blue: #007BFF;
+  --dark-bg: #0A0A0A;
+  font-family: 'Montserrat', sans-serif;
 }
 
-#sec-hondiven .hook-tag { color: #A8B4BC; }
-#sec-hondiven .hook-tag::before { background: #A8B4BC; }
-#sec-hondiven .hook-cta { border-color: #A8B4BC; color: #fff; }
-#sec-hondiven .hook-cta:hover { color: #A8B4BC; }
+#sec-hondiven h1, #sec-hondiven h2, #sec-hondiven h3, 
+#sec-hondiven .sec-title, #sec-hondiven .hook-title {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#sec-hondiven .hook-tag { color: var(--accent); }
+#sec-hondiven .hook-tag::before { background: var(--tech-blue); box-shadow: 0 0 8px rgba(0,123,255,0.5); }
+#sec-hondiven .hook-cta { border-color: var(--accent); color: #fff; }
+#sec-hondiven .hook-cta:hover { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px rgba(212,168,79,0.3); }
 
 #sec-hondiven .metric-card.accent {
-  background: linear-gradient(135deg, #2a3540 0%, #1a252d 100%) !important;
-  border-left: 3px solid #A8B4BC;
+  background: linear-gradient(135deg, #04152D 0%, #0A0A0A 100%) !important;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(0,123,255,0.1);
 }
-#sec-hondiven .metric-card.accent .metric-val { color: #fff; }
-#sec-hondiven .metric-card.accent .metric-label { color: rgba(168,180,188,0.8); }
-#sec-hondiven .metric-card:not(.accent):hover { background: rgba(168,180,188,0.04); }
+#sec-hondiven .metric-card.accent .metric-val { color: var(--accent); text-shadow: 0 0 10px rgba(212,168,79,0.4); }
+#sec-hondiven .metric-card.accent .metric-label { color: rgba(255,255,255,0.7); }
+#sec-hondiven .metric-card:not(.accent):hover { background: rgba(0,123,255,0.05); border-left-color: var(--tech-blue); }
 
-#sec-hondiven .service-num { color: #A8B4BC; opacity: 1; }
-#sec-hondiven .service-row:hover { background: rgba(168,180,188,0.04); }
-#sec-hondiven .service-row:hover .service-name { color: #C8D4DC; }
-#sec-hondiven .service-kpi { color: #A8B4BC; }
+#sec-hondiven .service-num { color: var(--accent); opacity: 1; text-shadow: 0 0 8px rgba(212,168,79,0.3); }
+#sec-hondiven .service-row:hover { background: linear-gradient(90deg, rgba(0,123,255,0.05) 0%, transparent 100%); }
+#sec-hondiven .service-row:hover .service-name { color: var(--tech-blue); text-shadow: 0 0 8px rgba(0,123,255,0.4); }
+#sec-hondiven .service-kpi { color: var(--accent); }
 
-#sec-hondiven .rtab.active { color: #fff; border-bottom-color: #A8B4BC; }
-#sec-hondiven .result-num { color: #A8B4BC; }
+#sec-hondiven .rtab.active { color: #fff; border-bottom-color: var(--tech-blue); box-shadow: 0 2px 10px rgba(0,123,255,0.2); }
+#sec-hondiven .result-num { color: var(--accent); text-shadow: 0 0 10px rgba(212,168,79,0.3); }
 
-#sec-hondiven .how-step { color: #A8B4BC; }
-#sec-hondiven .how-step::before { background: #A8B4BC; color: #0a0a0a; }
-#sec-hondiven .how-card:not(:last-child)::after { color: #A8B4BC; }
-#sec-hondiven .how-card:hover { background: rgba(168,180,188,0.04); }
+#sec-hondiven .how-step { color: var(--accent); }
+#sec-hondiven .how-step::before { background: var(--tech-blue); color: #fff; box-shadow: 0 0 8px rgba(0,123,255,0.4); }
+#sec-hondiven .how-card:not(:last-child)::after { color: rgba(212,168,79,0.3); }
+#sec-hondiven .how-card:hover { background: linear-gradient(135deg, rgba(0,123,255,0.05) 0%, transparent 100%); }
 
-#sec-hondiven .diff-eyebrow { color: #A8B4BC; }
-#sec-hondiven .diff-pillar-bar { background: #A8B4BC; }
+#sec-hondiven .diff-eyebrow { color: var(--accent); }
+#sec-hondiven .diff-pillar-bar { background: var(--tech-blue); box-shadow: 0 0 8px rgba(0,123,255,0.5); }
 
-#sec-hondiven .sec-link:hover { color: #A8B4BC; }
-#sec-hondiven .client-pill:hover { color: #C8D4DC; background: rgba(168,180,188,0.04); }
+#sec-hondiven .sec-link:hover { color: var(--tech-blue); text-shadow: 0 0 8px rgba(0,123,255,0.4); }
+#sec-hondiven .client-pill:hover { color: var(--tech-blue); background: rgba(0,123,255,0.05); border-color: var(--tech-blue); }
 
-#sec-hondiven .closing-sub { color: #A8B4BC; }
+#sec-hondiven .closing-sub { color: var(--accent); }
 #sec-hondiven .btn-primary {
-  background: #A8B4BC;
-  color: #0a0a0a;
+  background: linear-gradient(135deg, #D4A84F 0%, #A17F3B 100%);
+  color: #0A0A0A;
+  border: 1px solid #D4A84F;
+  box-shadow: 0 4px 15px rgba(212,168,79,0.3);
 }
 #sec-hondiven .btn-primary:hover {
-  background: #C8D4DC;
-  color: #0a0a0a;
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  color: #fff;
+  border-color: #007BFF;
+  box-shadow: 0 4px 15px rgba(0,123,255,0.4);
 }
 
-#sec-hondiven .contact-badge { border-color: rgba(168,180,188,0.3); color: rgba(168,180,188,0.7); }
-#sec-hondiven .contact-title span { color: #A8B4BC; }
+#sec-hondiven .contact-badge { border-color: rgba(212,168,79,0.3); color: var(--accent); }
+#sec-hondiven .contact-title span { color: var(--tech-blue); text-shadow: 0 0 10px rgba(0,123,255,0.3); }
 #sec-hondiven .form-input:focus,
 #sec-hondiven .form-select:focus,
-#sec-hondiven .form-textarea:focus { border-color: #A8B4BC; }
-#sec-hondiven .form-submit { background: linear-gradient(135deg,#2a3540,#1a252d) !important; color: #C8D4DC; border: 1px solid #A8B4BC; }
-#sec-hondiven .form-submit:hover { background: #A8B4BC !important; color: #0a0a0a; }
-
+#sec-hondiven .form-textarea:focus { border-color: var(--tech-blue); box-shadow: 0 0 8px rgba(0,123,255,0.2); background: rgba(4,21,45,0.8); }
+#sec-hondiven .form-submit { background: linear-gradient(135deg, #04152D, #0A0A0A) !important; color: var(--accent); border: 1px solid var(--accent); }
+#sec-hondiven .form-submit:hover { background: linear-gradient(135deg, #D4A84F, #A17F3B) !important; color: #0A0A0A; box-shadow: 0 4px 15px rgba(212,168,79,0.4); }
 /* selector left panel stays neutral */
 .sel-logo .wordmark { color: #fff; }
 
@@ -1389,64 +1412,46 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 .panel-bg-img {
   position: absolute;
   inset: 0;
-  z-index: 6;
+  z-index: 2;
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
 /* Imágenes específicas por panel */
 #transporte-bg-img {
-  background-image: url('bg_transporte.png');
-  background-position: center bottom;
+  background-image: url('IMAGENES/bg transporte.png');
+  background-position: center center;
   background-size: cover;
 }
 
 #construccion-bg-img {
   background-image: url('IMAGENES/CONSTRUCCION.png');
-  background-position: center bottom;
+  background-position: center center;
   background-size: cover;
 }
 
 #ceep-bg-img {
   background-image: url('IMAGENES/AHORRO_ENERGETICO.png');
-  background-position: center bottom;
+  background-position: center center;
   background-size: cover;
 }
 
 #gl-bg-img {
   background-image: url('IMAGENES/GROUNDINGLAB.png');
-  background-position: center bottom;
+  background-position: center center;
   background-size: cover;
 }
 
-/* Visible cuando el panel está activo (clic) */
-.panel-bg-img.visible {
+/* Imagen aparece SOLO al hacer hover — oculta por defecto */
+#selector:not(.minimized) .sel-panel:hover .panel-bg-img {
   opacity: 1;
 }
-
-/* También visible al hacer hover sobre el panel (modo expandido) */
-#selector:not(.minimized) .sel-panel:hover .panel-bg-img {
-  opacity: 0.85;
-}
-
-/* Ocultar figura antigua al hacer hover */
-#selector:not(.minimized) .sel-panel:hover .panel-person {
-  opacity: 0 !important;
-}
-
-/* En nav minimizada, ocultar siempre las imágenes */
+/* En nav minimizada, nunca mostrar imagen */
 #selector.minimized .panel-bg-img {
-  opacity: 0 !important;
-  transition: none;
-}
-
-/* Ocultar figura antigua cuando imagen nueva está activa */
-.sel-panel .panel-bg-img.visible ~ .panel-person,
-.sel-panel:has(.panel-bg-img.visible) .panel-person {
   opacity: 0 !important;
   transition: none;
 }
@@ -1581,35 +1586,9 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 
 /* ── NAVBAR DROPDOWN ── */
 .sel-panel { position: relative; }
-.panel-dropdown {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.92);
-  display: flex; flex-direction: column;
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.3s ease;
-  z-index: 20;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.sel-panel:hover .panel-dropdown,
-.sel-panel:focus-within .panel-dropdown {
-  max-height: 220px;
-  padding: 8px 0;
-}
-.panel-dropdown-item {
-  display: block;
-  padding: 9px 20px;
-  color: rgba(255,255,255,0.85);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.2s, color 0.2s;
-}
-.panel-dropdown-item:last-child { border-bottom: none; }
-.panel-dropdown-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+/* Dropdown negro en hover DESACTIVADO — eliminado por diseño */
+.panel-dropdown { display: none !important; }
+.panel-dropdown-item { display: none !important; }
 
 /* ── SERVICE EXPANDABLE ── */
 .service-expandable { cursor: pointer; flex-wrap: wrap; }
@@ -1873,7 +1852,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
       <div class="panel-bg-img" id="transporte-bg-img"></div>
       <div class="pcontent">
         <span class="plabel">Hondiven</span>
-        <span class="pname">TRANS-<br>PORTE</span>
+        <span class="pname">TRANSPORTE</span>
         <span class="psub">Carga Nacional y Operaciones Portuarias</span>
         <button class="pcta" aria-label="Ver más sobre Transporte" onclick="setTimeout(() => document.getElementById('contacto-transporte').scrollIntoView({behavior: 'smooth'}), 100);">Saber más</button>
       </div>
@@ -1893,7 +1872,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
       </div>
       <div class="pcontent">
         <span class="plabel">Hondiven</span>
-        <span class="pname">CONSTRUC-<br>CIÓN</span>
+        <span class="pname">CONSTRUCCIÓN</span>
         <span class="psub">Ecosistema Integral de Proyectos</span>
         <button class="pcta" aria-label="Ver más sobre Construcción" onclick="setTimeout(() => document.getElementById('contacto-construccion').scrollIntoView({behavior: 'smooth'}), 100);">Saber más</button>
       </div>
@@ -1912,9 +1891,8 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
         <img src="IMAGENES/AHORRO_ENERGETICO.png" alt="" draggable="false">
       </div>
       <div class="pcontent">
-        <img src="LOGOTIPOS/CEEP.png" alt="CEEP" class="panel-logo">
         <span class="plabel">Hondiven</span>
-        <span class="pname">AHORRO<br>ENERGÉTICO</span>
+        <span class="pname">AHORRO ENERGÉTICO</span>
         <span class="psub">Ahorro Energético y Eficiencia Eléctrica</span>
         <button class="pcta" aria-label="Ver más sobre CEEP" onclick="setTimeout(() => document.getElementById('contacto-ceep').scrollIntoView({behavior: 'smooth'}), 100);">Saber más</button>
       </div>
@@ -1933,9 +1911,8 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
         <img src="IMAGENES/GROUNDINGLAB.png" alt="" draggable="false">
       </div>
       <div class="pcontent">
-        <img src="LOGOTIPOS/GROUNDING LAB.png" alt="Grounding Lab" class="panel-logo">
         <span class="plabel">Hondiven</span>
-        <span class="pname">GROUNDING<br>LAB</span>
+        <span class="pname">GROUNDING LAB</span>
         <span class="psub">Sistemas de ingresos con IA</span>
         <button class="pcta" aria-label="Ver más sobre Grounding Lab" onclick="setTimeout(() => document.getElementById('contacto-gl').scrollIntoView({behavior: 'smooth'}), 100);">Saber más</button>
       </div>
@@ -1956,21 +1933,271 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 <!-- ════════════════════════════════════
      HONDIVEN CORPORATIVO
 ════════════════════════════════════ -->
-<div id="sec-hondiven" class="brand-section active" style="--accent:#A8B4BC;--form-accent:#A8B4BC">
+  <div id="sec-hondiven" class="brand-section active" style="--accent:#D4A84F;--form-accent:#D4A84F;background:#04152D">
 
-  <section class="hook">
-    <div class="hook-left">
-      <div class="hook-tag">El EBITDA no se define en los reportes</div>
-      <h1 class="hook-title">REDUCIMOS<br>COSTOS,<br>OPTIMIZAMOS<br>TU OPERACIÓN.</h1>
-      <div class="hook-right">
-        <p>Se define en tu operación diaria. Energía, finanzas, infraestructura y personas — cada punto impacta directamente tu rentabilidad.</p>
-        <a href="mailto:info@hondiven.com" class="hook-cta" aria-label="Solicitar Diagnóstico Ejecutivo por email">Solicitar Diagnóstico Ejecutivo</a>
+  <!-- ══ MENÚ NAVEGACIÓN INTERNO HONDIVEN ══ -->
+  <style>
+    #hn-nav { position:sticky;top:0;z-index:999;background:rgba(5,5,5,0.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(168,180,188,0.12);padding:0 40px;display:flex;align-items:center;gap:2rem;height:58px;font-family:'Barlow Condensed',sans-serif; }
+    #hn-nav .hn-logo { font-size:1rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#fff;text-decoration:none;margin-right:auto;white-space:nowrap; }
+    #hn-nav .hn-links { display:flex;align-items:center;gap:1.6rem;list-style:none;margin:0;padding:0; }
+    #hn-nav .hn-links li { position:relative; }
+    #hn-nav .hn-links a { font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;padding:0 2px;transition:color 0.2s;white-space:nowrap; }
+    #hn-nav .hn-links a:hover, #hn-nav .hn-links a:focus { color:#D4A843; }
+    /* Dropdown */
+    #hn-nav .hn-dropdown { position:relative; }
+    #hn-nav .hn-dropdown > a::after { content:" ▾";font-size:0.65rem; }
+    #hn-nav .hn-submenu { display:none;position:absolute;top:calc(100% + 10px);left:-16px;background:rgba(10,10,10,0.97);border:1px solid rgba(168,180,188,0.15);border-radius:2px;min-width:230px;padding:6px 0;z-index:1000;backdrop-filter:blur(10px); }
+    #hn-nav .hn-dropdown:hover .hn-submenu, #hn-nav .hn-dropdown:focus-within .hn-submenu { display:block; }
+    #hn-nav .hn-submenu a { display:block;padding:8px 18px;font-size:0.76rem;letter-spacing:0.06em;color:rgba(255,255,255,0.55);text-transform:uppercase;text-decoration:none;transition:background 0.15s,color 0.15s; }
+    #hn-nav .hn-submenu a:hover { background:rgba(212,168,67,0.08);color:#D4A843; }
+    #hn-nav .hn-cta { font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0a0a0a !important;background:#D4A843;padding:8px 18px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background 0.2s; }
+    #hn-nav .hn-cta:hover { background:#F0C85A; }
+    /* Mobile: ocultar links, mostrar solo logo y CTA */
+    @media (max-width:768px) {
+      #hn-nav { padding:0 20px;gap:1rem; }
+      #hn-nav .hn-links { display:none; }
+    }
+    /* Botón flotante mobile */
+    #hn-mobile-fab { display:none;position:fixed;bottom:0;left:0;right:0;z-index:1100;background:linear-gradient(135deg,#D4A843,#F0C85A);color:#0a0a0a;text-align:center;padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none; }
+    @media (max-width:768px) { #hn-mobile-fab { display:block; } }
+  </style>
+
+  <nav id="hn-nav" role="navigation" aria-label="Navegación HONDIVEN">
+    <a class="hn-logo" href="#sec-hondiven" aria-label="HONDIVEN inicio">HONDIVEN</a>
+
+    <ul class="hn-links" role="list">
+
+      <!-- Servicios con dropdown -->
+      <li class="hn-dropdown">
+        <a href="#portafolio-section" aria-haspopup="true" aria-expanded="false">Servicios</a>
+        <div class="hn-submenu" role="menu">
+          <a href="#portafolio-section" role="menuitem">Evaluación de Proyectos</a>
+          <a href="#portafolio-section" role="menuitem">Construcción e Infraestructura</a>
+          <a href="#portafolio-section" role="menuitem">Transporte y Logística</a>
+          <a href="#portafolio-section" role="menuitem">Ahorro Energético y de Agua</a>
+          <a href="#portafolio-section" role="menuitem">Grounding Lab</a>
+        </div>
+      </li>
+
+      <!-- Resultados -->
+      <li>
+        <a href="#resultados-section">Resultados</a>
+      </li>
+
+      <!-- Cómo trabajamos -->
+      <li>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+      </li>
+    </ul>
+
+    <!-- CTA destacado -->
+    <a href="#contacto-hondiven"
+       class="hn-cta"
+       aria-label="Solicitar diagnóstico gratuito HONDIVEN">
+      Solicitar diagnóstico
+    </a>
+  </nav>
+
+  <!-- Botón flotante mobile -->
+  <a id="hn-mobile-fab"
+     href="#contacto-hondiven"
+     aria-label="Diagnóstico gratuito HONDIVEN">
+    Diagnóstico gratuito →
+  </a>
+
+
+  <section class="hook" style="min-height:100vh;align-items:center">
+    <div class="hook-left" style="display:flex;flex-direction:column;justify-content:center;gap:0">
+
+      <!-- SUPERTÍTULO -->
+      <div class="hook-tag" style="margin-bottom:2rem;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.85">
+        Board Técnico-Ejecutivo Externo · Resultados desde el primer mes
       </div>
+
+      <!-- HEADLINE PRINCIPAL -->
+      <h1 class="hook-title" style="font-size:clamp(2rem,5vw,4rem);line-height:1.08;margin-bottom:1.5rem;font-weight:800">
+        Tu empresa está perdiendo<br>
+        entre <span style="color:#A8B4BC">10% y 30%</span> de su operación.<br>
+        <span style="font-size:0.72em;font-weight:700;color:rgba(255,255,255,0.7);display:block;margin-top:0.4em;line-height:1.2">
+          Nosotros lo encontramos y lo<br>convertimos en rentabilidad.
+        </span>
+      </h1>
+
+      <!-- SUBTÍTULO -->
+      <p style="font-size:clamp(0.9rem,1.4vw,1.1rem);line-height:1.7;color:rgba(255,255,255,0.55);max-width:520px;margin-bottom:2.4rem">
+        HONDIVEN interviene directamente en tu operación — energía, finanzas,
+        infraestructura, logística y tecnología — con un solo responsable y
+        resultados medibles.
+      </p>
+
+      <!-- CTAs -->
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-bottom:1.1rem">
+        <a href="#contacto-hondiven"
+           class="btn-primary"
+           style="font-size:0.95rem;padding:14px 32px;letter-spacing:0.06em;border-radius:2px"
+           aria-label="Solicitar diagnóstico gratuito HONDIVEN">
+          Solicitar diagnóstico gratuito →
+        </a>
+        <a href="#sec-hondiven .how-section"
+           onclick="document.querySelector('#sec-hondiven .how-section')?.scrollIntoView({behavior:'smooth'});return false;"
+           style="font-size:0.88rem;color:rgba(168,180,188,0.75);text-decoration:none;letter-spacing:0.08em;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#C8D4DC';this.style.borderBottomColor='#A8B4BC'"
+           onmouseout="this.style.color='rgba(168,180,188,0.75)';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+           aria-label="Ver cómo trabajamos en HONDIVEN">
+          Ver cómo trabajamos
+        </a>
+      </div>
+
+      <!-- URGENCIA -->
+      <p style="font-size:0.8rem;color:#E8820A;letter-spacing:0.04em;display:flex;align-items:center;gap:0.4rem;margin:0">
+        <span aria-hidden="true">⏱</span>
+        <em style="font-style:normal">"Cada mes sin control operativo es dinero que no recuperas."</em>
+      </p>
+
     </div>
     <div class="hook-hero-img">
-      <img src="bg_hondiven.png" alt="HONDIVEN hero" loading="eager">
+      <img src="IMAGENES/bg_hondiven_luxury.png" alt="HONDIVEN Board Técnico-Ejecutivo — control operativo integral" loading="eager">
     </div>
   </section>
+
+  <!-- ════════════════════════════════════
+       ¿QUÉ ES HONDIVEN?
+  ════════════════════════════════════ -->
+  <div id="que-es-hondiven" style="
+    padding: 80px 60px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+    <!-- Eyebrow -->
+    <div style="
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #A8B4BC;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    ">Quiénes somos</div>
+
+    <!-- Título -->
+    <h2 style="
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin: 0 0 1.6rem;
+      line-height: 1.1;
+    ">¿Qué es HONDIVEN?</h2>
+
+    <!-- Texto principal -->
+    <p style="
+      font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+      line-height: 1.78;
+      color: rgba(255,255,255,0.58);
+      max-width: 760px;
+      margin: 0 0 3rem;
+    ">
+      HONDIVEN es el board técnico-ejecutivo externo que tu empresa necesita
+      para tomar decisiones con información real, ejecutar con control y operar
+      sin incertidumbre. Somos el área técnica de alto nivel que tienes sin
+      contratarla como planta fija. Intervenimos directamente en tu operación,
+      identificamos pérdidas, eliminamos ineficiencias y generamos resultados
+      medibles desde el primer mes.
+    </p>
+
+    <!-- Tres tarjetas -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    ">
+      <!-- Tarjeta 1 -->
+      <div style="
+        border-left: 2px solid #A8B4BC;
+        padding: 1.4rem 1.6rem;
+        background: rgba(168,180,188,0.04);
+        border-radius: 0 2px 2px 0;
+        transition: background 0.25s, border-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.04)';this.style.borderColor='#A8B4BC'"
+      >
+        <div style="
+          font-size: 10px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #A8B4BC;
+          margin-bottom: 0.75rem;
+          font-weight: 600;
+        ">01</div>
+        <p style="
+          font-size: 0.98rem;
+          font-weight: 600;
+          color: #E8E8E8;
+          line-height: 1.45;
+          margin: 0;
+        ">Controlamos tu operación —<br>no solo asesoramos</p>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div style="
+        border-left: 2px solid #A8B4BC;
+        padding: 1.4rem 1.6rem;
+        background: rgba(168,180,188,0.04);
+        border-radius: 0 2px 2px 0;
+        transition: background 0.25s, border-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.04)';this.style.borderColor='#A8B4BC'"
+      >
+        <div style="
+          font-size: 10px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #A8B4BC;
+          margin-bottom: 0.75rem;
+          font-weight: 600;
+        ">02</div>
+        <p style="
+          font-size: 0.98rem;
+          font-weight: 600;
+          color: #E8E8E8;
+          line-height: 1.45;
+          margin: 0;
+        ">Optimizamos tu EBITDA —<br>con datos reales, no supuestos</p>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div style="
+        border-left: 2px solid #A8B4BC;
+        padding: 1.4rem 1.6rem;
+        background: rgba(168,180,188,0.04);
+        border-radius: 0 2px 2px 0;
+        transition: background 0.25s, border-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.04)';this.style.borderColor='#A8B4BC'"
+      >
+        <div style="
+          font-size: 10px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #A8B4BC;
+          margin-bottom: 0.75rem;
+          font-weight: 600;
+        ">03</div>
+        <p style="
+          font-size: 0.98rem;
+          font-weight: 600;
+          color: #E8E8E8;
+          line-height: 1.45;
+          margin: 0;
+        ">Somos tu área técnica sin costo fijo —<br>un solo responsable</p>
+      </div>
+    </div>
+  </div>
 
   <div class="metrics">
     <div class="metric-card" style="background:linear-gradient(135deg,rgba(0,69,230,0.15) 0%,rgba(0,0,0,0) 100%);border-left:2px solid #0045e6;border-radius:4px;padding:24px;transition:all 0.3s ease"><div class="metric-val" style="background:linear-gradient(135deg,#0045e6,#00aaff);-webkit-background-clip:text;background-clip:text;color:transparent">−30%</div><div class="metric-label" style="color:#807E7E">Reducción costo energético</div></div>
@@ -1979,133 +2206,974 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     <div class="metric-card" style="background:linear-gradient(135deg,rgba(160,0,32,0.15) 0%,rgba(0,0,0,0) 100%);border-left:2px solid #a00020;border-radius:4px;padding:24px;transition:all 0.3s ease"><div class="metric-val" style="background:linear-gradient(135deg,#a00020,#ff073a);-webkit-background-clip:text;background-clip:text;color:transparent">7</div><div class="metric-label" style="color:#807E7E">Servicios integrados</div></div>
   </div>
 
-  <!-- SERVICIOS -->
-  <div class="sec-header"><h2 class="sec-title">SERVICIOS</h2></div>
-  <div class="services-list">
-    <div class="service-row"><span class="service-num">01</span><div class="service-info"><span class="service-name">Ahorro Energético</span><span class="service-desc">Medición en tiempo real · IA predictiva · ISO 50001 · Dashboards gerenciales</span></div><span class="service-kpi">−30%</span></div>
-    <div class="service-row"><span class="service-num">02</span><div class="service-info"><span class="service-name">Control Financiero y Conciliación</span><span class="service-desc">QR en facturación · Conciliación automática · Multisucursal / Multiruc · Integración ERP</span></div><span class="service-kpi">100%</span></div>
-    <div class="service-row"><span class="service-num">03</span><div class="service-info"><span class="service-name">IA / Growth Lab</span><span class="service-desc">Data + automatización · Optimización comercial · Predicción de comportamiento</span></div><span class="service-kpi">↑</span></div>
-    <div class="service-row"><span class="service-num">04</span><div class="service-info"><span class="service-name">Infraestructura</span><span class="service-desc">Construcción + supervisión · Control técnico + financiero · Cumplimiento total</span></div><span class="service-kpi">+1M m²</span></div>
-    <div class="service-row"><span class="service-num">05</span><div class="service-info"><span class="service-name">Reutilización de Agua</span><span class="service-desc">Ahorro máximo en gestión hídrica industrial.</span></div><span class="service-kpi">−60%</span></div>
-    <div class="service-row"><span class="service-num">06</span><div class="service-info"><span class="service-name">Hidrosiembra</span><span class="service-desc">Control de erosión · Estabilización de taludes · Cumplimiento normativo</span></div><span class="service-kpi">✓</span></div>
-    <div class="service-row"><span class="service-num">07</span><div class="service-info"><span class="service-name">Wallet Corporativo</span><span class="service-desc">Pago de sueldos · Beneficios y convenios · Integración RRHH + Finanzas</span></div><span class="service-kpi">↑</span></div>
+  <!-- PROPUESTA / EBITDA -->
+  <div id="ebitda-section" style="
+    padding: 80px 60px 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+
+    <!-- Eyebrow -->
+    <div style="
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #A8B4BC;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    ">Propuesta de valor</div>
+
+    <!-- Título principal -->
+    <h2 style="
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin: 0 0 0.5rem;
+      line-height: 1.05;
+    ">El EBITDA no se define en los reportes.</h2>
+
+    <!-- Subtítulo en dorado -->
+    <p style="
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #D4A843;
+      margin: 0 0 1.6rem;
+      line-height: 1.15;
+    ">Se define en la operación diaria.</p>
+
+    <!-- Párrafo descriptivo -->
+    <p style="
+      font-size: clamp(0.93rem, 1.4vw, 1.05rem);
+      line-height: 1.78;
+      color: rgba(255,255,255,0.55);
+      max-width: 680px;
+      margin: 0 0 3.2rem;
+    ">
+      Cada punto de tu operación impacta directamente tu rentabilidad,
+      tu nivel de control y la solidez de tu empresa.
+    </p>
+
+    <!-- 6 bloques numerados -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    ">
+
+      <!-- 1 Procesos -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #A8B4BC;
+        background: rgba(168,180,188,0.03);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderLeftColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.03)';this.style.borderLeftColor='#A8B4BC'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(168,180,188,0.25);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">1</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #A8B4BC;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Procesos</div>
+        </div>
+      </div>
+
+      <!-- 2 Energía -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #A8B4BC;
+        background: rgba(168,180,188,0.03);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderLeftColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.03)';this.style.borderLeftColor='#A8B4BC'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(168,180,188,0.25);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">2</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #A8B4BC;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Energía</div>
+        </div>
+      </div>
+
+      <!-- 3 Finanzas -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #A8B4BC;
+        background: rgba(168,180,188,0.03);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderLeftColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.03)';this.style.borderLeftColor='#A8B4BC'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(168,180,188,0.25);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">3</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #A8B4BC;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Finanzas</div>
+        </div>
+      </div>
+
+      <!-- 4 Infraestructura -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #A8B4BC;
+        background: rgba(168,180,188,0.03);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderLeftColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.03)';this.style.borderLeftColor='#A8B4BC'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(168,180,188,0.25);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">4</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #A8B4BC;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Infraestructura</div>
+        </div>
+      </div>
+
+      <!-- 5 Logística -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #A8B4BC;
+        background: rgba(168,180,188,0.03);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.08)';this.style.borderLeftColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.03)';this.style.borderLeftColor='#A8B4BC'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(168,180,188,0.25);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">5</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #A8B4BC;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Logística</div>
+        </div>
+      </div>
+
+      <!-- 6 Decisiones -->
+      <div style="
+        display: flex;
+        align-items: flex-start;
+        gap: 1.1rem;
+        padding: 1.3rem 1.5rem;
+        border: 1px solid rgba(168,180,188,0.12);
+        border-left: 3px solid #D4A843;
+        background: rgba(212,168,67,0.04);
+        border-radius: 0 3px 3px 0;
+        transition: background 0.25s, border-color 0.25s;
+        cursor: default;
+      "
+      onmouseover="this.style.background='rgba(212,168,67,0.09)';this.style.borderLeftColor='#E8C060'"
+      onmouseout="this.style.background='rgba(212,168,67,0.04)';this.style.borderLeftColor='#D4A843'"
+      >
+        <span style="
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: rgba(212,168,67,0.35);
+          line-height: 1;
+          min-width: 2rem;
+          letter-spacing: -0.02em;
+        ">6</span>
+        <div>
+          <div style="
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #D4A843;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+          ">Área crítica</div>
+          <div style="
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #E8E8E8;
+            letter-spacing: 0.01em;
+          ">Decisiones</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- RESULTADOS REALES -->
-  <div class="results-tabs-section">
-    <div class="results-tabs-header">
-      <h2 class="sec-title">RESULTADOS REALES</h2>
-      <div class="results-tab-nav">
-        <button class="rtab active" onclick="switchTab(this,'rt-h-1')" aria-label="Ver resultados de Energía">Energía</button>
-        <button class="rtab" onclick="switchTab(this,'rt-h-2')" aria-label="Ver resultados de Finanzas">Finanzas</button>
-        <button class="rtab" onclick="switchTab(this,'rt-h-3')" aria-label="Ver resultados de Infraestructura">Infraestructura</button>
-        <button class="rtab" onclick="switchTab(this,'rt-h-4')" aria-label="Ver resultados de Operación">Operación</button>
+  <!-- ════════════════════════════════════
+       PROBLEMAS QUE SOLUCIONAMOS
+  ════════════════════════════════════ -->
+  <div id="problemas-section" style="
+    padding: 80px 60px 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#A8B4BC;margin-bottom:1.2rem;font-weight:600">Problemas que solucionamos</div>
+
+    <!-- Subtítulo-pregunta -->
+    <p style="font-size:clamp(1rem,1.8vw,1.2rem);font-weight:500;color:rgba(255,255,255,0.5);letter-spacing:0.02em;margin:0 0 1rem">¿Alguno de estos problemas suena familiar?</p>
+
+    <!-- Título principal -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.7rem,4vw,2.9rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 3rem;line-height:1.08;max-width:820px">
+      HONDIVEN identifica estas pérdidas<br>y las transforma en resultados.
+    </h2>
+
+    <!-- Grid 8 tarjetas -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:3rem">
+
+      <!-- 01 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">01</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Costos operativos ocultos</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Entre el 10% y 30% de pérdida no detectada en la operación diaria.</div>
       </div>
+
+      <!-- 02 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">02</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Descontrol financiero</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Falta de trazabilidad y visibilidad sobre el flujo real del negocio.</div>
+      </div>
+
+      <!-- 03 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">03</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Proyectos con sobrecostos</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Proyectos mal evaluados o ejecutados sin control técnico-financiero.</div>
+      </div>
+
+      <!-- 04 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">04</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Infraestructura sin control</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Activos operando sin supervisión técnica ni gestión de mantenimiento.</div>
+      </div>
+
+      <!-- 05 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">05</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Consumo energético e hídrico ineficiente</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Recursos desperdiciados que impactan directamente la rentabilidad.</div>
+      </div>
+
+      <!-- 06 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">06</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Logística sin visibilidad</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Operaciones sin trazabilidad ni control en tiempo real.</div>
+      </div>
+
+      <!-- 07 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">07</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Crecimiento sin rentabilidad</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Expansión sin uso de data ni métricas que sustenten las decisiones.</div>
+      </div>
+
+      <!-- 08 -->
+      <div style="padding:1.5rem 1.4rem;border:1px solid rgba(200,60,60,0.15);border-left:3px solid rgba(200,60,60,0.5);background:rgba(200,60,60,0.03);border-radius:0 3px 3px 0;transition:background 0.25s,border-left-color 0.25s;cursor:default"
+        onmouseover="this.style.background='rgba(168,180,188,0.07)';this.style.borderLeftColor='#A8B4BC'"
+        onmouseout="this.style.background='rgba(200,60,60,0.03)';this.style.borderLeftColor='rgba(200,60,60,0.5)'">
+        <div style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,60,60,0.65);margin-bottom:0.6rem;font-weight:700">08</div>
+        <div style="font-size:0.97rem;font-weight:700;color:#E8E8E8;margin-bottom:0.5rem;line-height:1.3">Tecnología sin retorno</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.55">Inversión en tecnología sin conocimiento ni resultados claros.</div>
+      </div>
+
     </div>
-    <div class="results-tab-panels">
-      <div id="rt-h-1" class="rtab-panel active">
-        <div class="result-item"><div class="result-num">−30%</div><div class="result-body"><div class="result-title">Ahorro Energético Real</div><div class="result-desc">Reducción máxima alcanzada en costos de energía mediante IA predictiva y monitoreo continuo.</div></div></div>
-        <div class="result-item"><div class="result-num">ISO</div><div class="result-body"><div class="result-title">Gestión Certificada</div><div class="result-desc">Implementación bajo estándar internacional ISO 50001 con dashboards gerenciales en tiempo real.</div></div></div>
-        <div class="result-item"><div class="result-num">−60%</div><div class="result-body"><div class="result-title">Menos Consumo de Agua</div><div class="result-desc">Ahorro máximo alcanzado en proyectos de gestión hídrica industrial. El agua deja de ser costo.</div></div></div>
-        <div class="result-item"><div class="result-num">24/7</div><div class="result-body"><div class="result-title">Monitoreo Continuo</div><div class="result-desc">Visibilidad ejecutiva completa del desempeño energético operacional en tiempo real.</div></div></div>
-      </div>
-      <div id="rt-h-2" class="rtab-panel">
-        <div class="result-item"><div class="result-num">100%</div><div class="result-body"><div class="result-title">Control Total de Caja</div><div class="result-desc">Conciliación automática en tiempo real. Sin intervención manual. La caja no se revisa — se controla.</div></div></div>
-        <div class="result-item"><div class="result-num">0</div><div class="result-body"><div class="result-title">Reprocesos Financieros</div><div class="result-desc">Eliminación de errores por conciliación manual. QR vinculado a cada factura directamente.</div></div></div>
-        <div class="result-item"><div class="result-num">ERP</div><div class="result-body"><div class="result-title">Integración Total</div><div class="result-desc">Conexión directa con los sistemas de gestión empresarial existentes. Multisucursal y multiruc.</div></div></div>
-        <div class="result-item"><div class="result-num">↑</div><div class="result-body"><div class="result-title">Ingresos con IA</div><div class="result-desc">Predicción de comportamiento comercial. Data + automatización para optimización de ingresos.</div></div></div>
-      </div>
-      <div id="rt-h-3" class="rtab-panel">
-        <div class="result-item"><div class="result-num">+1M</div><div class="result-body"><div class="result-title">m² Ejecutados</div><div class="result-desc">Más de un millón de metros cuadrados en proyectos con supervisión técnica permanente en obra.</div></div></div>
-        <div class="result-item"><div class="result-num">0%</div><div class="result-body"><div class="result-title">Desviación de Presupuesto</div><div class="result-desc">Control técnico y financiero simultáneo. Seguimiento del avance físico vs. presupuesto en todo momento.</div></div></div>
-        <div class="result-item"><div class="result-num">✓</div><div class="result-body"><div class="result-title">Cumplimiento Total</div><div class="result-desc">Entrega dentro de plazos, normas y estándares de calidad. Disciplina técnica con visión financiera.</div></div></div>
-        <div class="result-item"><div class="result-num">↓</div><div class="result-body"><div class="result-title">Control de CAPEX</div><div class="result-desc">Optimización de inversiones de capital con visibilidad total. Decisiones que reducen CAPEX y mantenimiento.</div></div></div>
-      </div>
-      <div id="rt-h-4" class="rtab-panel">
-        <div class="result-item"><div class="result-num">M1</div><div class="result-body"><div class="result-title">Ahorro desde el Primer Mes</div><div class="result-desc">Impacto financiero inmediato desde el inicio de la implementación, sin esperar ciclos largos.</div></div></div>
-        <div class="result-item"><div class="result-num">↓</div><div class="result-body"><div class="result-title">Reducción de OPEX</div><div class="result-desc">Optimización sostenida de los costos operativos. Resultados medibles y continuos.</div></div></div>
-        <div class="result-item"><div class="result-num">🛡</div><div class="result-body"><div class="result-title">Protección del EBITDA</div><div class="result-desc">Blindaje del margen operativo frente a ineficiencias y pérdidas ocultas en la operación.</div></div></div>
-        <div class="result-item"><div class="result-num">↑</div><div class="result-body"><div class="result-title">Productividad Interna</div><div class="result-desc">Wallet corporativo conecta el bienestar del colaborador con la eficiencia financiera de la empresa.</div></div></div>
-      </div>
-    </div>
+
+    <!-- CTA -->
+    <a href="#contacto-hondiven"
+       class="btn-primary"
+       style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.92rem;padding:14px 28px;letter-spacing:0.04em;border-radius:2px"
+       aria-label="Solicitar diagnóstico gratuito HONDIVEN">
+      Si reconoces alguno de estos problemas → Solicitar diagnóstico
+    </a>
+
   </div>
+
+  <!-- RESULTADOS -->
+  <div id="resultados-section" style="
+    padding: 80px 60px 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#A8B4BC;margin-bottom:1.2rem;font-weight:600">Resultados comprobados</div>
+
+    <!-- Título -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.2vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 3.5rem;line-height:1.07;max-width:800px">
+      Resultados que se miden,<br>no que se prometen.
+    </h2>
+
+    <!-- Grid 8 contadores -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      border-top: 1px solid rgba(168,180,188,0.12);
+      border-left: 1px solid rgba(168,180,188,0.12);
+      margin-bottom: 3rem;
+    ">
+
+      <!-- 1 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+200,000</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Negocios incorporados a soluciones tecnológicas</div>
+      </div>
+
+      <!-- 2 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+30,000</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Agentes corresponsales bancarios implementados</div>
+      </div>
+
+      <!-- 3 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+2,000</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Proyectos evaluados con 50% de ejecución exitosa</div>
+      </div>
+
+      <!-- 4 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+1M ton</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Toneladas transportadas a nivel nacional e internacional</div>
+      </div>
+
+      <!-- 5 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+1M m²</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Ejecutados en infraestructura y construcción</div>
+      </div>
+
+      <!-- 6 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">+20 años</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">De operación continua en logística y operaciones críticas</div>
+      </div>
+
+      <!-- 7 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">−30%</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Reducción promedio en costos de energía</div>
+      </div>
+
+      <!-- 8 -->
+      <div style="padding:2rem 1.6rem;border-right:1px solid rgba(168,180,188,0.12);border-bottom:1px solid rgba(168,180,188,0.12);transition:background 0.2s"
+        onmouseover="this.style.background='rgba(168,180,188,0.04)'"
+        onmouseout="this.style.background='transparent'">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:0.7rem">−60%</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.5">Reducción promedio en consumo de agua</div>
+      </div>
+
+    </div>
+
+    <!-- Sectores -->
+    <div style="margin-bottom:2.8rem">
+      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(168,180,188,0.55);margin-bottom:1rem;font-weight:600">Sectores donde operamos</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.6rem">
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Construcción</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Logística</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Agroindustria</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Minería</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Educación</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Turismo</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Servicios</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Fintech</span>
+        <span style="font-size:0.78rem;padding:0.35rem 0.9rem;border:1px solid rgba(168,180,188,0.2);color:rgba(168,180,188,0.7);border-radius:20px;letter-spacing:0.06em;font-weight:500;transition:all 0.2s"
+          onmouseover="this.style.borderColor='#A8B4BC';this.style.color='#C8D4DC'"
+          onmouseout="this.style.borderColor='rgba(168,180,188,0.2)';this.style.color='rgba(168,180,188,0.7)'">Telecom</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="#contacto-hondiven"
+       class="btn-primary"
+       style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.92rem;padding:14px 28px;letter-spacing:0.04em;border-radius:2px"
+       aria-label="Agendar llamada con HONDIVEN">
+      Conoce cómo logramos estos resultados → Agendar llamada
+    </a>
+
+  </div>
+
+
+  <!-- PORTAFOLIO DE SERVICIOS -->
+  <div id="portafolio-section" style="
+    padding: 80px 60px 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#A8B4BC;margin-bottom:1.2rem;font-weight:600">Lo que hacemos</div>
+
+    <!-- Título -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.2vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 3rem;line-height:1.07">
+      Portafolio de Servicios.
+    </h2>
+
+    <!-- Grid de tarjetas -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-bottom:2.8rem">
+
+      <!-- Tarjeta 1: Evaluación de Proyectos -->
+      <div style="
+        display:flex;flex-direction:column;
+        padding:2rem 1.8rem;
+        border:1px solid rgba(168,180,188,0.15);
+        border-top:3px solid #A8B4BC;
+        background:rgba(168,180,188,0.02);
+        border-radius:0 0 3px 3px;
+        transition:background 0.25s,border-top-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.06)';this.style.borderTopColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.02)';this.style.borderTopColor='#A8B4BC'"
+      >
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8B4BC;margin-bottom:0.8rem;font-weight:600">01</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.9rem;line-height:1.3">Evaluación de Proyectos</div>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0 0 auto;flex:1">
+          Inteligencia técnica antes de invertir. Evaluamos, validamos y optimizamos cada proyecto integrando ingeniería, data y tecnología. Identificamos riesgos y optimizamos el CAPEX antes de que comiences.
+        </p>
+        <a href="#contacto-hondiven"
+           style="display:inline-block;margin-top:1.6rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#A8B4BC;text-decoration:none;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;font-weight:600;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#fff';this.style.borderBottomColor='#fff'"
+           onmouseout="this.style.color='#A8B4BC';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+           aria-label="Solicitar servicio de Evaluación de Proyectos">
+          Solicitar este servicio →
+        </a>
+      </div>
+
+      <!-- Tarjeta 2: Construcción e Infraestructura -->
+      <div style="
+        display:flex;flex-direction:column;
+        padding:2rem 1.8rem;
+        border:1px solid rgba(168,180,188,0.15);
+        border-top:3px solid #A8B4BC;
+        background:rgba(168,180,188,0.02);
+        border-radius:0 0 3px 3px;
+        transition:background 0.25s,border-top-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.06)';this.style.borderTopColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.02)';this.style.borderTopColor='#A8B4BC'"
+      >
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8B4BC;margin-bottom:0.8rem;font-weight:600">02</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.9rem;line-height:1.3">Construcción e Infraestructura</div>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0 0 auto;flex:1">
+          Ecosistema integral de proyectos. Integramos ingeniería, financiamiento y ejecución con control técnico y financiero simultáneo. Proyectos en energía, industria e inmobiliario.
+        </p>
+        <a href="#contacto-hondiven"
+           style="display:inline-block;margin-top:1.6rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#A8B4BC;text-decoration:none;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;font-weight:600;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#fff';this.style.borderBottomColor='#fff'"
+           onmouseout="this.style.color='#A8B4BC';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+           aria-label="Solicitar servicio de Construcción e Infraestructura">
+          Solicitar este servicio →
+        </a>
+      </div>
+
+      <!-- Tarjeta 3: Transporte y Logística -->
+      <div style="
+        display:flex;flex-direction:column;
+        padding:2rem 1.8rem;
+        border:1px solid rgba(168,180,188,0.15);
+        border-top:3px solid #A8B4BC;
+        background:rgba(168,180,188,0.02);
+        border-radius:0 0 3px 3px;
+        transition:background 0.25s,border-top-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.06)';this.style.borderTopColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.02)';this.style.borderTopColor='#A8B4BC'"
+      >
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8B4BC;margin-bottom:0.8rem;font-weight:600">03</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.9rem;line-height:1.3">Transporte y Logística</div>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0 0 auto;flex:1">
+          Operación crítica con control total. Transporte terrestre, operaciones portuarias, monitoreo GPS y control financiero integrado para toda la cadena logística.
+        </p>
+        <a href="#contacto-hondiven"
+           style="display:inline-block;margin-top:1.6rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#A8B4BC;text-decoration:none;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;font-weight:600;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#fff';this.style.borderBottomColor='#fff'"
+           onmouseout="this.style.color='#A8B4BC';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+           aria-label="Solicitar servicio de Transporte y Logística">
+          Solicitar este servicio →
+        </a>
+      </div>
+
+      <!-- Tarjeta 4: Ahorro Energético ★ QUICK WIN -->
+      <div style="
+        display:flex;flex-direction:column;
+        padding:2rem 1.8rem;
+        border:1px solid rgba(212,168,67,0.3);
+        border-top:3px solid #D4A843;
+        background:rgba(212,168,67,0.04);
+        border-radius:0 0 3px 3px;
+        position:relative;
+        transition:background 0.25s,border-top-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(212,168,67,0.09)';this.style.borderTopColor='#F0C85A'"
+      onmouseout="this.style.background='rgba(212,168,67,0.04)';this.style.borderTopColor='#D4A843'"
+      >
+        <!-- Badge QUICK WIN -->
+        <span style="
+          position:absolute;top:-1px;right:1.2rem;
+          font-size:9px;letter-spacing:0.18em;text-transform:uppercase;
+          background:#D4A843;color:#0a0a0a;
+          padding:3px 10px;font-weight:800;border-radius:0 0 4px 4px;
+        ">Quick Win</span>
+
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#D4A843;margin-bottom:0.8rem;font-weight:600">04 — Servicio recomendado</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.9rem;line-height:1.3">Ahorro Energético y de Agua</div>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0 0 auto;flex:1">
+          Eficiencia operativa con impacto directo en costos. Diagnóstico energético con tecnología avanzada. Resultado promedio: <strong style="color:#D4A843">−30% en costos de energía</strong> y <strong style="color:#D4A843">−60% en consumo de agua</strong> desde el primer diagnóstico.
+        </p>
+        <a href="#contacto-hondiven"
+           style="display:inline-block;margin-top:1.6rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4A843;text-decoration:none;border-bottom:1px solid rgba(212,168,67,0.4);padding-bottom:2px;font-weight:700;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#F0C85A';this.style.borderBottomColor='#F0C85A'"
+           onmouseout="this.style.color='#D4A843';this.style.borderBottomColor='rgba(212,168,67,0.4)'"
+           aria-label="Solicitar diagnóstico energético HONDIVEN">
+          Solicitar este servicio →
+        </a>
+      </div>
+
+      <!-- Tarjeta 5: Grounding Lab -->
+      <div style="
+        display:flex;flex-direction:column;
+        padding:2rem 1.8rem;
+        border:1px solid rgba(168,180,188,0.15);
+        border-top:3px solid #A8B4BC;
+        background:rgba(168,180,188,0.02);
+        border-radius:0 0 3px 3px;
+        transition:background 0.25s,border-top-color 0.25s;
+      "
+      onmouseover="this.style.background='rgba(168,180,188,0.06)';this.style.borderTopColor='#C8D4DC'"
+      onmouseout="this.style.background='rgba(168,180,188,0.02)';this.style.borderTopColor='#A8B4BC'"
+      >
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8B4BC;margin-bottom:0.8rem;font-weight:600">05</div>
+        <div style="font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.9rem;line-height:1.3">Grounding Lab</div>
+        <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0 0 auto;flex:1">
+          Sistema de generación de ingresos con inteligencia artificial. Diseñamos sistemas comerciales con IA, automatización de ventas, CRM y escalamiento estructurado.
+        </p>
+        <a href="#contacto-hondiven"
+           style="display:inline-block;margin-top:1.6rem;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#A8B4BC;text-decoration:none;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;font-weight:600;transition:color 0.2s,border-color 0.2s"
+           onmouseover="this.style.color='#fff';this.style.borderBottomColor='#fff'"
+           onmouseout="this.style.color='#A8B4BC';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+           aria-label="Solicitar servicio Grounding Lab">
+          Solicitar este servicio →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CTA de cierre -->
+    <div style="
+      padding:1.6rem 2rem;
+      border:1px solid rgba(168,180,188,0.12);
+      border-left:3px solid #A8B4BC;
+      background:rgba(168,180,188,0.03);
+      border-radius:0 3px 3px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:1.2rem;
+    ">
+      <p style="font-size:0.92rem;color:rgba(255,255,255,0.6);margin:0;line-height:1.5">
+        ¿No sabes por dónde empezar? — Cuéntanos tu situación y te decimos exactamente qué necesita tu empresa.
+      </p>
+      <a href="#contacto-hondiven"
+         class="btn-primary"
+         style="white-space:nowrap;font-size:0.88rem;padding:12px 24px;letter-spacing:0.04em;border-radius:2px"
+         aria-label="Solicitar diagnóstico gratuito HONDIVEN">
+        No sabes por dónde empezar → Solicitar diagnóstico gratuito
+      </a>
+    </div>
+
+  </div>
+
 
   <!-- ¿POR QUÉ HONDIVEN? -->
-  <div class="why-section">
-    <div class="sec-header"><h2 class="sec-title">¿POR QUÉ HONDIVEN?</h2></div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-card-icon">✦</div>
-        <div class="why-card-title">Un solo responsable</div>
-        <div class="why-card-desc">No gestionas proveedores. Gestionas tu operación con control total.</div>
+  <div id="por-que-hondiven" style="
+    padding: 80px 60px 72px;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  ">
+
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#A8B4BC;margin-bottom:1.2rem;font-weight:600">Nuestro diferencial</div>
+
+    <!-- Título -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 3rem;line-height:1.08;max-width:780px">
+      ¿Por qué HONDIVEN y no una consultora tradicional?
+    </h2>
+
+    <!-- 5 puntos -->
+    <div style="display:flex;flex-direction:column;gap:0">
+
+      <!-- 01 -->
+      <div style="
+        display:flex;align-items:flex-start;gap:1.4rem;
+        padding:1.6rem 0;
+        border-bottom:1px solid rgba(168,180,188,0.1);
+        transition:background 0.2s;
+      "
+      onmouseover="this.style.paddingLeft='0.8rem';this.style.background='rgba(168,180,188,0.03)'"
+      onmouseout="this.style.paddingLeft='0';this.style.background='transparent'"
+      >
+        <div style="font-size:1.4rem;color:#A8B4BC;line-height:1;min-width:1.8rem;padding-top:2px">✦</div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Un solo responsable</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.48);line-height:1.6">No gestionas proveedores. Gestionas tu operación con control total.</div>
+        </div>
+        <div style="margin-left:auto;font-size:9px;letter-spacing:0.18em;color:rgba(168,180,188,0.35);font-weight:700;padding-top:4px;white-space:nowrap">01</div>
       </div>
-      <div class="why-card">
-        <div class="why-card-icon">◈</div>
-        <div class="why-card-title">Resultados desde el primer mes</div>
-        <div class="why-card-desc">Impacto medible desde el inicio del compromiso.</div>
+
+      <!-- 02 -->
+      <div style="
+        display:flex;align-items:flex-start;gap:1.4rem;
+        padding:1.6rem 0;
+        border-bottom:1px solid rgba(168,180,188,0.1);
+        transition:background 0.2s,padding-left 0.2s;
+      "
+      onmouseover="this.style.paddingLeft='0.8rem';this.style.background='rgba(168,180,188,0.03)'"
+      onmouseout="this.style.paddingLeft='0';this.style.background='transparent'"
+      >
+        <div style="font-size:1.4rem;color:#A8B4BC;line-height:1;min-width:1.8rem;padding-top:2px">◈</div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Resultados desde el primer mes</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.48);line-height:1.6">Impacto medible desde el inicio del compromiso.</div>
+        </div>
+        <div style="margin-left:auto;font-size:9px;letter-spacing:0.18em;color:rgba(168,180,188,0.35);font-weight:700;padding-top:4px;white-space:nowrap">02</div>
       </div>
-      <div class="why-card">
-        <div class="why-card-icon">▲</div>
-        <div class="why-card-title">Board técnico-ejecutivo de alto nivel</div>
-        <div class="why-card-desc">Experiencia comprobada en múltiples sectores.</div>
+
+      <!-- 03 -->
+      <div style="
+        display:flex;align-items:flex-start;gap:1.4rem;
+        padding:1.6rem 0;
+        border-bottom:1px solid rgba(168,180,188,0.1);
+        transition:background 0.2s,padding-left 0.2s;
+      "
+      onmouseover="this.style.paddingLeft='0.8rem';this.style.background='rgba(168,180,188,0.03)'"
+      onmouseout="this.style.paddingLeft='0';this.style.background='transparent'"
+      >
+        <div style="font-size:1.4rem;color:#A8B4BC;line-height:1;min-width:1.8rem;padding-top:2px">▲</div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Board técnico-ejecutivo de alto nivel</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.48);line-height:1.6">Experiencia comprobada en 7 sectores y más de 20 años.</div>
+        </div>
+        <div style="margin-left:auto;font-size:9px;letter-spacing:0.18em;color:rgba(168,180,188,0.35);font-weight:700;padding-top:4px;white-space:nowrap">03</div>
       </div>
-      <div class="why-card">
-        <div class="why-card-icon">⬡</div>
-        <div class="why-card-title">Tecnología integrada a la operación</div>
-        <div class="why-card-desc">Ecosistema completo con financiamiento desde el ahorro.</div>
+
+      <!-- 04 -->
+      <div style="
+        display:flex;align-items:flex-start;gap:1.4rem;
+        padding:1.6rem 0;
+        border-bottom:1px solid rgba(168,180,188,0.1);
+        transition:background 0.2s,padding-left 0.2s;
+      "
+      onmouseover="this.style.paddingLeft='0.8rem';this.style.background='rgba(168,180,188,0.03)'"
+      onmouseout="this.style.paddingLeft='0';this.style.background='transparent'"
+      >
+        <div style="font-size:1.4rem;color:#A8B4BC;line-height:1;min-width:1.8rem;padding-top:2px">⬡</div>
+        <div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Tecnología integrada a la operación</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.48);line-height:1.6">No vendemos software. Implementamos y operamos.</div>
+        </div>
+        <div style="margin-left:auto;font-size:9px;letter-spacing:0.18em;color:rgba(168,180,188,0.35);font-weight:700;padding-top:4px;white-space:nowrap">04</div>
       </div>
+
+      <!-- 05 — DESTACADO EN DORADO -->
+      <div style="
+        display:flex;align-items:flex-start;gap:1.4rem;
+        padding:1.8rem 1.6rem;
+        margin-top:0.4rem;
+        border:1px solid rgba(212,168,67,0.3);
+        border-left:3px solid #D4A843;
+        background:rgba(212,168,67,0.05);
+        border-radius:0 3px 3px 0;
+        transition:background 0.25s;
+      "
+      onmouseover="this.style.background='rgba(212,168,67,0.1)'"
+      onmouseout="this.style.background='rgba(212,168,67,0.05)'"
+      >
+        <div style="font-size:1.4rem;color:#D4A843;line-height:1;min-width:1.8rem;padding-top:2px">◆</div>
+        <div>
+          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4A843;margin-bottom:0.4rem;font-weight:700">Diferenciador clave</div>
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem">Financiamiento desde el ahorro</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.6">El servicio se paga con los costos que eliminamos.</div>
+        </div>
+        <div style="margin-left:auto;font-size:9px;letter-spacing:0.18em;color:rgba(212,168,67,0.45);font-weight:700;padding-top:4px;white-space:nowrap">05</div>
+      </div>
+
     </div>
   </div>
 
   <!-- CÓMO TRABAJAMOS -->
-  <div class="how-section">
-    <div class="sec-header"><h2 class="sec-title">CÓMO TRABAJAMOS</h2><span style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase">5 pasos. Sin incertidumbre.</span></div>
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="how-step" data-n="1">Paso</div>
-        <div class="how-name">Entendemos el negocio</div>
-        <div class="how-desc">Analizamos la operación completa para identificar dónde realmente se está perdiendo dinero.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step" data-n="2">Paso</div>
-        <div class="how-name">Hacemos visible lo invisible</div>
-        <div class="how-desc">Medimos en tiempo real y convertimos la operación en información clara y accionable.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step" data-n="3">Paso</div>
-        <div class="how-name">Cuantificamos el impacto</div>
-        <div class="how-desc">Traducimos cada ineficiencia en dinero: costos, pérdidas y oportunidades.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step" data-n="4">Paso</div>
-        <div class="how-name">Ejecutamos con control</div>
-        <div class="how-desc">Implementamos soluciones técnicas y operativas sin interrumpir la operación.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step" data-n="5">Paso</div>
-        <div class="how-name">Aseguramos resultados</div>
-        <div class="how-desc">Monitoreo continuo y control total para sostener la mejora en el tiempo.</div>
-      </div>
-    </div>
-  </div>
+  <div id="como-trabajamos" style="padding:80px 60px 72px;max-width:1100px;margin:0 auto;box-sizing:border-box">
 
-  <!-- DIFERENCIAL -->
-  <div class="diff-section">
-    <div class="diff-left">
-      <div class="diff-eyebrow">Nuestro diferencial</div>
-      <h3 class="diff-title">EL MÁS ALTO NIVEL DE BOARD TÉCNICO–EJECUTIVO DEL PERÚ</h3>
-      <p class="diff-body">Nuestro equipo combina experiencia técnica de primer nivel con visión estratégica ejecutiva. No somos consultores. Somos el board técnico-ejecutivo que tu empresa necesita para proteger su EBITDA.</p>
-    </div>
-    <div class="diff-right">
-      <div class="diff-pillars">
-        <div class="diff-pillar"><div class="diff-pillar-bar"></div><div><div class="diff-pillar-name">Board Técnico</div><div class="diff-pillar-sub">Equipo técnico de élite y experiencia profunda en cada sector.</div></div></div>
-        <div class="diff-pillar"><div class="diff-pillar-bar"></div><div><div class="diff-pillar-name">Visión Ejecutiva</div><div class="diff-pillar-sub">Enfoque estratégico y gobernanza integral del negocio.</div></div></div>
-        <div class="diff-pillar"><div class="diff-pillar-bar"></div><div><div class="diff-pillar-name">Impacto en EBITDA</div><div class="diff-pillar-sub">Resultados financieros medibles y mejora directa desde el primer mes.</div></div></div>
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#A8B4BC;margin-bottom:1.2rem;font-weight:600">Proceso</div>
+
+    <!-- Título -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.2vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 0.7rem;line-height:1.07">
+      Cómo trabajamos.
+    </h2>
+
+    <!-- Subtítulo -->
+    <p style="font-size:clamp(0.9rem,1.5vw,1.05rem);color:rgba(255,255,255,0.45);margin:0 0 3.5rem;letter-spacing:0.02em">
+      Sin interrumpir tu operación. Sin burocracia. Con resultados.
+    </p>
+
+    <!-- Timeline -->
+    <div style="display:flex;flex-direction:column;gap:0;margin-bottom:3rem">
+
+      <!-- Paso 1 -->
+      <div style="display:flex;gap:1.8rem;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">1</div>
+          <div style="width:1px;height:100%;min-height:2.5rem;background:linear-gradient(to bottom,rgba(212,168,67,0.4),rgba(168,180,188,0.15));margin-top:6px"></div>
+        </div>
+        <div style="padding:0.4rem 0 2.4rem">
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem">Entendemos el negocio</div>
+          <div style="font-size:0.84rem;color:rgba(255,255,255,0.46);line-height:1.65">Analizamos la operación completa para identificar dónde realmente se está perdiendo dinero.</div>
+        </div>
       </div>
+
+      <!-- Paso 2 -->
+      <div style="display:flex;gap:1.8rem;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">2</div>
+          <div style="width:1px;height:100%;min-height:2.5rem;background:linear-gradient(to bottom,rgba(168,180,188,0.25),rgba(168,180,188,0.1));margin-top:6px"></div>
+        </div>
+        <div style="padding:0.4rem 0 2.4rem">
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem">Hacemos visible lo invisible</div>
+          <div style="font-size:0.84rem;color:rgba(255,255,255,0.46);line-height:1.65">Medimos en tiempo real y convertimos la operación en información clara y accionable.</div>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div style="display:flex;gap:1.8rem;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">3</div>
+          <div style="width:1px;height:100%;min-height:2.5rem;background:linear-gradient(to bottom,rgba(168,180,188,0.25),rgba(168,180,188,0.1));margin-top:6px"></div>
+        </div>
+        <div style="padding:0.4rem 0 2.4rem">
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem">Cuantificamos el impacto</div>
+          <div style="font-size:0.84rem;color:rgba(255,255,255,0.46);line-height:1.65">Traducimos cada ineficiencia en dinero: costos, pérdidas y oportunidades.</div>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div style="display:flex;gap:1.8rem;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">4</div>
+          <div style="width:1px;height:100%;min-height:2.5rem;background:linear-gradient(to bottom,rgba(168,180,188,0.25),rgba(168,180,188,0.1));margin-top:6px"></div>
+        </div>
+        <div style="padding:0.4rem 0 2.4rem">
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem">Ejecutamos con control</div>
+          <div style="font-size:0.84rem;color:rgba(255,255,255,0.46);line-height:1.65">Implementamos soluciones técnicas y operativas sin interrumpir la operación.</div>
+        </div>
+      </div>
+
+      <!-- Paso 5 — último, sin conector -->
+      <div style="display:flex;gap:1.8rem;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#D4A843,#F0C85A);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">5</div>
+        </div>
+        <div style="padding:0.4rem 0 0">
+          <div style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.35rem">Aseguramos resultados</div>
+          <div style="font-size:0.84rem;color:rgba(255,255,255,0.46);line-height:1.65">Monitoreo continuo y control total para sostener la mejora en el tiempo.</div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- CTA -->
+    <a href="#contacto-hondiven"
+       class="btn-primary"
+       style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.92rem;padding:14px 28px;letter-spacing:0.04em;border-radius:2px"
+       aria-label="Agendar diagnóstico HONDIVEN">
+      Listo para empezar → Agenda tu diagnóstico
+    </a>
+
   </div>
 
   <!-- CLIENTES -->
+
   <div class="sec-header"><h2 class="sec-title">CLIENTES</h2></div>
   <div class="clients-section">
     <p class="clients-intro">Empresas líderes del Perú y la región confían en HONDIVEN para optimizar su operación y proteger su rentabilidad.</p>
@@ -2135,17 +3203,62 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     </div>
   </div>
 
-  <!-- CIERRE -->
-  <div class="closing">
-    <div class="closing-left">
-      <div><div class="closing-sub">Cierre</div><h2 class="closing-title">SI TU EMPRESA NO ESTÁ OPTIMIZADA… ESTÁ PERDIENDO DINERO HOY.</h2></div>
-      <a href="mailto:info@hondiven.com" class="closing-pill" style="text-decoration:none" aria-label="Agendar reunión de 20 minutos"><span>👉</span> Agenda una reunión de 20 minutos</a>
+  <!-- CONVERSIÓN FINAL -->
+  <div id="conversion-final" style="
+    background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(5,5,5,1) 100%);
+    border-top: 1px solid rgba(168,180,188,0.1);
+    padding: 100px 60px 90px;
+    text-align: center;
+    box-sizing: border-box;
+  ">
+    <!-- Eyebrow -->
+    <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(168,180,188,0.5);margin-bottom:1.8rem;font-weight:600">Diagnóstico sin costo</div>
+
+    <!-- Título principal -->
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.9rem,5vw,3.6rem);font-weight:800;text-transform:uppercase;letter-spacing:0.03em;color:#fff;margin:0 0 1rem;line-height:1.06;max-width:800px;margin-left:auto;margin-right:auto">
+      ¿Tu empresa puede estar perdiendo<br>dinero en este momento?
+    </h2>
+
+    <!-- Subtítulo dorado -->
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.2rem,2.5vw,1.9rem);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#D4A843;margin:0 0 3rem">
+      Descúbrelo en 30 minutos. Sin costo.
+    </p>
+
+    <!-- 3 opciones de contacto -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem">
+
+      <!-- Botón principal -->
+      <a href="#contacto-hondiven"
+         class="btn-primary"
+         style="font-size:1rem;padding:16px 36px;letter-spacing:0.05em;border-radius:2px"
+         aria-label="Solicitar diagnóstico gratuito HONDIVEN">
+        Solicitar diagnóstico gratuito
+      </a>
+
+      <!-- Botón secundario con borde dorado -->
+      <a href="#contacto-hondiven"
+         style="display:inline-flex;align-items:center;font-size:0.95rem;padding:15px 30px;border:1.5px solid #D4A843;color:#D4A843;text-decoration:none;letter-spacing:0.05em;border-radius:2px;font-weight:600;transition:background 0.2s,color 0.2s"
+         onmouseover="this.style.background='#D4A843';this.style.color='#0a0a0a'"
+         onmouseout="this.style.background='transparent';this.style.color='#D4A843'"
+         aria-label="Descargar propuesta HONDIVEN">
+        Descargar propuesta HONDIVEN
+      </a>
+
+      <!-- Enlace WhatsApp -->
+      <a href="https://wa.me/51999999999?text=Hola%20HONDIVEN%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20diagn%C3%B3stico%20gratuito"
+         target="_blank" rel="noopener"
+         style="font-size:0.9rem;color:rgba(168,180,188,0.7);text-decoration:none;border-bottom:1px solid rgba(168,180,188,0.3);padding-bottom:2px;letter-spacing:0.05em;transition:color 0.2s,border-color 0.2s"
+         onmouseover="this.style.color='#C8D4DC';this.style.borderBottomColor='#A8B4BC'"
+         onmouseout="this.style.color='rgba(168,180,188,0.7)';this.style.borderBottomColor='rgba(168,180,188,0.3)'"
+         aria-label="Hablar por WhatsApp con HONDIVEN">
+        Hablar directamente por WhatsApp
+      </a>
     </div>
-    <div class="closing-right">
-      <p style="font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;font-weight:600">Infraestructura + Energía + Finanzas + Personas</p>
-      <a href="#contacto-hondiven" class="btn-primary" aria-label="Solicitar Diagnóstico Ejecutivo">Solicitar Diagnóstico Ejecutivo →</a>
-      <a href="#contacto-hondiven" class="btn-outline" aria-label="Agendar reunión">Agendar Reunión →</a>
-    </div>
+
+    <!-- Alerta de urgencia -->
+    <p style="font-size:0.8rem;color:#C84040;letter-spacing:0.03em;max-width:620px;margin:0 auto;line-height:1.6">
+      Las empresas que no miden su operación en tiempo real pierden en promedio entre 10% y 30% de su rentabilidad mensual.
+    </p>
   </div>
 
   <!-- FORMULARIO HONDIVEN -->
@@ -2241,7 +3354,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
       </div>
     </div>
     <div class="hook-hero-img">
-      <img src="IMAGENES/bg transporte.png" alt="HONDIVEN Transporte hero" loading="lazy">
+      <img src="IMAGENES/bg_transporte_premium.png" alt="HONDIVEN Transporte hero" loading="lazy">
     </div>
   </section>
 
@@ -2421,6 +3534,19 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     </div>
   </div>
 
+  <style>
+    #contacto-transporte { background: #0A0A0A; color: #ffffff; }
+    #contacto-transporte .contact-title { color: #ffffff; }
+    #contacto-transporte .contact-sub { color: rgba(255,255,255,0.7); }
+    #contacto-transporte .form-label { color: rgba(255,255,255,0.8); }
+    #contacto-transporte .form-input, 
+    #contacto-transporte .form-select, 
+    #contacto-transporte .form-textarea { background: rgba(255,255,255,0.05); border: 1px solid #00A86B; color: #ffffff; }
+    #contacto-transporte .form-input::placeholder, 
+    #contacto-transporte .form-textarea::placeholder { color: #aaaaaa; opacity: 1; }
+    #contacto-transporte .form-select { color: #ffffff; }
+    #contacto-transporte .form-select option { background: #0A0A0A; color: #ffffff; }
+  </style>
   <!-- FORMULARIO TRANSPORTE -->
   <div id="contacto-transporte" class="contact-section" style="--form-accent:#00A86B">
     <span class="contact-badge">¿Listo para mover tu carga?</span>
@@ -2486,7 +3612,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
         </div>
       </div>
       <div class="hook-hero-img">
-        <img src="bg_construccion.png" alt="HONDIVEN Construcción hero" loading="lazy">
+        <img src="IMAGENES/bg_construccion_premium.png" alt="HONDIVEN Construcción hero" loading="lazy">
       </div>
     </section>
 
@@ -2578,7 +3704,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
         </div>
         <span class="service-kpi">→</span>
         <div class="service-expand-content">
-          <p class="service-expand-desc">Ejecutamos proyectos con control total del costo, cronograma y calidad, con un solo responsable desde el inicio hasta la entrega.</p>
+          <p class="service-expand-desc">Ejecutamos proyectos con control del costo, cronograma y calidad, con un solo responsable desde el inicio hasta la entrega.</p>
           <p class="service-expand-target"><strong>Para:</strong> Empresas e instituciones que requieren ejecución confiable de obras con trazabilidad financiera.</p>
           <a href="#contacto-hondiven" class="service-expand-cta">Consultar Proyecto de Construcción →</a>
         </div>
@@ -2761,7 +3887,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
       </div>
     </div>
     <div class="hook-hero-img">
-      <img src="bg_ahorro.png" alt="HONDIVEN Ahorro Energético hero" loading="lazy">
+      <img src="IMAGENES/bg_ahorro_premium.png" alt="HONDIVEN Ahorro Energético hero" loading="lazy">
     </div>
   </section>
 
@@ -2972,7 +4098,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
       </div>
     </div>
     <div class="hook-hero-img">
-      <img src="bg_grounding.png" alt="HONDIVEN Grounding Lab hero" loading="lazy">
+      <img src="IMAGENES/bg_grounding_premium.png" alt="HONDIVEN Grounding Lab hero" loading="lazy">
     </div>
   </section>
 
