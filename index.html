@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -181,6 +181,7 @@ body {
   transition: opacity 0.3s;
 }
 /* Colores de panel */
+#selector.minimized .sel-panel.evaluacion { background: linear-gradient(135deg, #7A5C1E 0%, #3b2208 100%) !important; }
 #selector.minimized .sel-panel.ceep { background: linear-gradient(135deg, #E85D00 0%, #b54600 100%) !important; }
 #selector.minimized .sel-panel.gl   { background: linear-gradient(135deg, #C0392B 0%, #7b1d14 100%) !important; }
 /* Activo vs inactivo */
@@ -482,6 +483,7 @@ body {
 /* Capa de color sólido base — siempre visible, z-index bajo */
 .sel-panel .pbg { position: absolute; inset: 0; z-index: 1; }
 /* Colores sólidos por panel */
+.sel-panel.evaluacion   .pbg { background: linear-gradient(170deg,#1a0e00 0%,#3b2208 40%,#7A5C1E 85%,#c4942c 100%); }
 .sel-panel.transporte  .pbg { background: linear-gradient(170deg,#051f12 0%,#0B3D2E 45%,#0f5c3e 80%,#00A86B 100%); }
 .sel-panel.construccion .pbg { background: linear-gradient(170deg,#010d2a 0%,#022883 40%,#0045e6 85%,#4d7fff 100%); }
 .sel-panel.ceep .pbg { background: linear-gradient(170deg,#3d1200 0%,#7a2c00 40%,#E8550A 85%,#ff6a1a 100%); }
@@ -1422,6 +1424,12 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 }
 
 /* Imágenes específicas por panel */
+#evaluacion-bg-img {
+  background-image: url('IMAGENES/bg_evaluacion_meeting.png');
+  background-position: center center;
+  background-size: cover;
+}
+
 #transporte-bg-img {
   background-image: url('IMAGENES/bg transporte.png');
   background-position: center center;
@@ -1814,6 +1822,218 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
   }
 }
 
+
+/* ===============================================================
+   RESPONSIVE MOVIL COMPLETO - corrige legibilidad y layout
+   =============================================================== */
+
+/* -- NAVEGACION MINIMIZADA EN MOVIL -- */
+@media (max-width: 768px) {
+  #selector.minimized .sel-logo {
+    flex: 0 0 110px !important;
+    width: 110px !important;
+    padding: 0 10px;
+  }
+  #selector.minimized .hondiven-logo-full { width: 84px; }
+  #selector.minimized .sel-panel .pname {
+    font-size: 8px !important;
+    letter-spacing: 0.04em !important;
+  }
+  #selector.minimized { height: 56px; }
+  #selector.minimized .sel-panels { height: 56px !important; }
+  #selector.minimized .sel-panel { height: 56px !important; }
+  #selector.minimized ~ #content { padding-top: 56px; }
+
+  /* Hero selector en movil */
+  #selector:not(.minimized) { flex-direction: column; height: auto; min-height: 100svh; }
+  #selector:not(.minimized) .sel-logo {
+    flex: 0 0 auto;
+    padding: 32px 20px 16px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0a0a0a;
+  }
+  #selector:not(.minimized) .hondiven-logo-full { width: clamp(160px, 55%, 300px); }
+  #selector:not(.minimized) .sel-panels { flex-direction: column; min-height: 60svh; }
+  #selector:not(.minimized) .sel-panel { flex: 1 !important; }
+  #selector:not(.minimized) .sel-panel .pname { font-size: clamp(18px, 5vw, 28px) !important; }
+  #selector:not(.minimized) .sel-panel .psub { font-size: 11px !important; }
+  .vline { display: none !important; }
+}
+
+/* -- HOOK / HERO -- */
+@media (max-width: 768px) {
+  .hook-left { width: 100%; padding: 56px 20px 36px; min-height: 460px; }
+  .hook-left .hook-title { font-size: clamp(30px, 9vw, 52px) !important; line-height: 1 !important; }
+  .hook-left .hook-tag { font-size: 10px; }
+  .hook-left .hook-right p { font-size: 13px; line-height: 1.65; }
+  .hook-hero-img::after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 100%);
+  }
+}
+
+/* -- METRICAS -- */
+@media (max-width: 768px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric-card { padding: 24px 16px; }
+  .metric-val { font-size: clamp(26px, 8vw, 44px) !important; }
+  .metric-label { font-size: 10px; letter-spacing: 0.1em; }
+}
+
+/* -- SEC-HEADER -- */
+@media (max-width: 768px) {
+  .sec-header { padding: 38px 20px 12px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .sec-title { font-size: clamp(28px, 8vw, 48px) !important; line-height: 1.05; }
+}
+
+/* -- SERVICES LIST -- */
+@media (max-width: 768px) {
+  .service-row { padding: 18px 20px; grid-template-columns: 38px 1fr; gap: 10px; }
+  .service-name { font-size: clamp(17px, 5vw, 26px) !important; }
+  .service-desc { font-size: 12px; }
+  .service-kpi { display: none; }
+  .service-expand-content { padding: 0 0 0 32px; }
+  .service-expandable.open .service-expand-content { padding: 10px 0 14px 32px; }
+}
+
+/* -- RESULTS TABS -- */
+@media (max-width: 768px) {
+  .results-tabs-header { padding: 38px 20px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .results-tab-panels { padding: 0 20px; }
+  .rtab { padding: 12px 14px; font-size: 11px; letter-spacing: 0.07em; }
+  .rtab-panel.active { grid-template-columns: 1fr; }
+  .result-item { padding: 22px 0; }
+  .result-item:nth-child(even) { padding-left: 0; border-left: none; }
+  .result-num { font-size: clamp(26px, 7vw, 42px) !important; min-width: 56px; }
+  .result-title { font-size: 15px; }
+  .result-desc { font-size: 12px; }
+}
+
+/* -- HOW GRID -- */
+@media (max-width: 768px) {
+  .how-grid { grid-template-columns: 1fr; padding: 28px 20px; gap: 0; }
+  .how-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 20px 0; }
+  .how-card:last-child { border-bottom: none; }
+  .how-card:not(:last-child)::after { display: none; }
+  .how-name { font-size: 17px; }
+  .how-desc { font-size: 12px; }
+}
+
+/* -- WHY CARDS -- */
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr 1fr; padding: 28px 20px; gap: 2px; }
+  .why-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 18px 14px; }
+  .why-card:last-child { border-bottom: none; }
+  .why-card-title { font-size: 15px; }
+  .why-card-desc { font-size: 11px; }
+}
+@media (max-width: 420px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+/* -- DIFF SECTION -- */
+@media (max-width: 768px) {
+  .diff-section { grid-template-columns: 1fr; }
+  .diff-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 38px 20px; }
+  .diff-right { padding: 36px 20px; }
+  .diff-title { font-size: clamp(22px, 6vw, 36px) !important; }
+  .diff-body { font-size: 13px; }
+  .diff-pillar-name { font-size: 15px; }
+  .diff-pillar-sub { font-size: 11px; }
+}
+
+/* -- CLIENTS MARQUEE -- */
+@media (max-width: 768px) {
+  .clients-section { padding: 36px 0; }
+  .clients-intro { padding: 0 20px; font-size: 13px; margin-bottom: 20px; }
+  .marquee-item { font-size: clamp(15px, 4vw, 20px); padding: 0 24px; height: 58px; }
+  .marquee-dot { width: 4px; height: 4px; margin-right: 10px; }
+}
+
+/* -- CLOSING CTA -- */
+@media (max-width: 768px) {
+  .closing { grid-template-columns: 1fr; }
+  .closing-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 40px 20px; }
+  .closing-right { padding: 36px 20px; }
+  .closing-title { font-size: clamp(26px, 8vw, 46px) !important; }
+  .closing-sub { font-size: 10px; }
+  .closing-pill { font-size: 13px; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; padding: 16px 20px; font-size: 13px; }
+}
+
+/* -- CONTACT FORM -- */
+@media (max-width: 768px) {
+  .contact-section { padding: 48px 20px 68px; }
+  .contact-title { font-size: clamp(26px, 7vw, 46px) !important; }
+  .contact-sub { font-size: 13px; margin-bottom: 32px; }
+  .contact-form { padding: 24px 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-input, .form-select, .form-textarea { font-size: 16px; padding: 13px 14px; }
+  .form-label { font-size: 10px; }
+  .form-submit { font-size: 15px; padding: 16px 20px; }
+}
+
+/* -- FOOTER -- */
+@media (max-width: 768px) {
+  footer { padding: 36px 20px 24px; }
+  .footer-phone { font-size: clamp(26px, 8vw, 46px) !important; }
+  .footer-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .footer-links a { font-size: 11px; }
+  .footer-email { font-size: 12px; }
+}
+
+/* -- BANNER STICKY -- */
+@media (max-width: 768px) {
+  .banner-inner { padding: 12px 16px; gap: 8px; flex-wrap: wrap; }
+  .banner-text { font-size: 12px; width: 100%; order: 1; }
+  .banner-cta { order: 2; padding: 8px 16px; font-size: 11px; }
+  .banner-close { order: 3; font-size: 16px; }
+}
+
+/* -- SECTORES / QUIENES (CONSTRUCCION) -- */
+@media (max-width: 768px) {
+  .sectores-grid { grid-template-columns: 1fr 1fr; }
+  .quienes-section { padding: 36px 20px; }
+  .quienes-cards { grid-template-columns: 1fr; }
+  .sector-name { font-size: 12px; }
+  .sector-detail { font-size: 11px; }
+  .quien-card-title { font-size: 16px; }
+  .quien-card-desc { font-size: 12px; }
+}
+@media (max-width: 420px) {
+  .sectores-grid { grid-template-columns: 1fr; }
+}
+
+/* -- EXTRA PEQUENO <= 400px -- */
+@media (max-width: 400px) {
+  .metric-val { font-size: 24px !important; }
+  .result-num { font-size: 24px !important; }
+  .hook-left .hook-title { font-size: 26px !important; }
+  .sec-title { font-size: 26px !important; }
+  .closing-title { font-size: 24px !important; }
+  .why-grid { grid-template-columns: 1fr; }
+  .rtab { padding: 10px 10px; font-size: 10px; }
+}
+
+/* -- HOW-GRID 6 COLUMNAS (TRANSPORTE) -- override inline style */
+@media (max-width: 1100px) {
+  .how-grid--6 { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 768px) {
+  .how-grid--6 { grid-template-columns: 1fr !important; }
+  .transp-two-col { grid-template-columns: 1fr !important; gap: 20px !important; padding: 0 16px !important; }
+}
+
+/* -- INLINE GRIDS (transporte) en movil -- alta especificidad */
+@media (max-width: 768px) {
+  #sec-transporte .how-grid {
+    grid-template-columns: 1fr !important;
+    padding: 24px 16px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1847,6 +2067,23 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 
   </a>
   <div class="sel-panels" role="tablist" aria-label="Selecciona una unidad de negocio">
+    <div class="sel-panel evaluacion" onclick="switchBrand('evaluacion')" role="tab" aria-selected="false" aria-label="HONDIVEN Evaluación de Proyectos — Inteligencia Técnica antes de Invertir" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')switchBrand('evaluacion')">
+      <div class="pbg" aria-hidden="true"></div>
+      <div class="panel-bg-img" id="evaluacion-bg-img"></div>
+      <div class="pcontent">
+        <span class="plabel">HONDIVEN</span>
+        <span class="pname">EVALUACIÓN DE PROYECTOS</span>
+        <span class="psub">Inteligencia Técnica antes de Invertir</span>
+        <button class="pcta" aria-label="Ver más sobre Evaluación de Proyectos" onclick="setTimeout(() => document.getElementById('sec-evaluacion').scrollIntoView({behavior: 'smooth'}), 100);">Saber más</button>
+      </div>
+      <div class="panel-dropdown" role="menu">
+        <a href="#sec-evaluacion" class="panel-dropdown-item" onclick="switchBrand('evaluacion'); return true;">Análisis de Viabilidad</a>
+        <a href="#sec-evaluacion" class="panel-dropdown-item" onclick="switchBrand('evaluacion'); return true;">Evaluación Técnica</a>
+        <a href="#sec-evaluacion" class="panel-dropdown-item" onclick="switchBrand('evaluacion'); return true;">Diagnóstico de Riesgo</a>
+        <a href="#sec-evaluacion" class="panel-dropdown-item" onclick="switchBrand('evaluacion'); return true;">Consultoría de Inversión</a>
+      </div>
+    </div>
+
     <div class="sel-panel transporte" onclick="switchBrand('transporte')" role="tab" aria-selected="false" aria-label="HONDIVEN Transporte - Carga Nacional y Operaciones Portuarias" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')switchBrand('transporte')">
       <div class="pbg" aria-hidden="true"></div>
       <div class="panel-bg-img" id="transporte-bg-img"></div>
@@ -3318,6 +3555,130 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 
 
 <!-- ════════════════════════════════════
+     HONDIVEN EVALUACIÓN DE PROYECTOS
+════════════════════════════════════ -->
+<div id="sec-evaluacion" class="brand-section" style="--accent:#B8872A;--form-accent:#B8872A">
+
+  <!-- HERO LAYOUT -->
+  <section class="hook">
+    <div class="hook-left">
+      <div class="hook-tag">HONDIVEN EVALUACIÓN DE PROYECTOS — Inteligencia Técnica</div>
+      <h1 class="hook-title">Inteligencia técnica antes de invertir</h1>
+      <div class="hook-right">
+        <p>HONDIVEN evalúa, valida y optimiza cada proyecto antes de ejecutarlo, integrando ingeniería, data y tecnología.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;">
+          <a href="mailto:info@hondiven.com" class="btn-primary" style="background:#B8872A;color:#fff;border:none;">Solicitar evaluación</a>
+          <a href="#contacto-evaluacion" class="btn-outline" style="color:#fff;border:1px solid rgba(255,255,255,0.4);background:transparent;">Conocer más</a>
+        </div>
+      </div>
+    </div>
+    <div class="hook-hero-img">
+      <img src="IMAGENES/bg_evaluacion_meeting.png" alt="Equipo HONDIVEN evaluando proyectos con datos en pantallas corporativas" loading="lazy">
+    </div>
+  </section>
+
+  <!-- INDICADORES / METRICAS -->
+  <div class="metrics">
+    <div class="metric-card" style="background:linear-gradient(135deg,rgba(184,135,42,0.08) 0%,rgba(0,0,0,0) 100%);transition:all 0.3s ease">
+      <div class="metric-val" style="background:linear-gradient(135deg,#B8872A,#e3bf6d);-webkit-background-clip:text;background-clip:text;color:transparent">+120</div>
+      <div class="metric-label" style="color:#807E7E">Proyectos evaluados</div>
+    </div>
+    <div class="metric-card" style="background:linear-gradient(135deg,rgba(184,135,42,0.08) 0%,rgba(0,0,0,0) 100%);transition:all 0.3s ease">
+      <div class="metric-val" style="background:linear-gradient(135deg,#B8872A,#e3bf6d);-webkit-background-clip:text;background-clip:text;color:transparent">30%</div>
+      <div class="metric-label" style="color:#807E7E">Reducción promedio de CAPEX</div>
+    </div>
+    <div class="metric-card" style="background:linear-gradient(135deg,rgba(184,135,42,0.08) 0%,rgba(0,0,0,0) 100%);transition:all 0.3s ease">
+      <div class="metric-val" style="background:linear-gradient(135deg,#B8872A,#e3bf6d);-webkit-background-clip:text;background-clip:text;color:transparent">98%</div>
+      <div class="metric-label" style="color:#807E7E">Riesgos identificados antes de ejecución</div>
+    </div>
+    <div class="metric-card" style="background:linear-gradient(135deg,rgba(184,135,42,0.08) 0%,rgba(0,0,0,0) 100%);transition:all 0.3s ease">
+      <div class="metric-val" style="background:linear-gradient(135deg,#B8872A,#e3bf6d);-webkit-background-clip:text;background-clip:text;color:transparent">24h</div>
+      <div class="metric-label" style="color:#807E7E">Diagnóstico inicial express</div>
+    </div>
+  </div>
+
+  <!-- METODO / FASES -->
+  <div class="how-section">
+    <div class="sec-header">
+      <h2 class="sec-title">Nuestro Método</h2>
+      <span style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase">Ingeniería y Data en cada etapa</span>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-step" data-n="1">Fase</div>
+        <div class="how-name">Evaluación de Viabilidad</div>
+        <div class="how-desc">Análisis técnico, financiero y operativo para determinar la viabilidad y rentabilidad real del proyecto.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="2">Fase</div>
+        <div class="how-name">Análisis de Riesgos</div>
+        <div class="how-desc">Identificación temprana de sobrecostos, desviaciones y riesgos de ejecución antes de invertir capital.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="3">Fase</div>
+        <div class="how-name">Simulación de Escenarios</div>
+        <div class="how-desc">Modelado digital y simulaciones técnicas para optimizar la toma de decisiones basada en datos reales.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="4">Fase</div>
+        <div class="how-name">Optimización de CAPEX</div>
+        <div class="how-desc">Ingeniería de valor aplicada para reducir la inversión inicial sin sacrificar calidad ni rendimiento.</div>
+      </div>
+      <div class="how-card">
+        <div class="how-step" data-n="5">Fase</div>
+        <div class="how-name">Integración Total</div>
+        <div class="how-desc">Sincronización del proyecto con las áreas de energía, cadena de suministro y operación futura.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div id="contacto-evaluacion" class="contact-section" style="--form-accent:#B8872A">
+    <span class="contact-badge">¿Tienes un proyecto que evaluar?</span>
+    <h2 class="contact-title">Tu diagnóstico<br><span>empieza aquí.</span></h2>
+    <p class="contact-sub">Escríbenos y un especialista de HONDIVEN revisará tu proyecto sin compromiso.</p>
+    <form class="contact-form" onsubmit="handleForm(event,'evaluacion')">
+      <input type="hidden" name="_brand" value="evaluacion">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="evl-nombre">Nombre completo</label>
+          <input id="evl-nombre" class="form-input" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="evl-empresa">Empresa</label>
+          <input id="evl-empresa" class="form-input" type="text" name="empresa" placeholder="Tu empresa" autocomplete="organization">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="evl-email">Correo electrónico</label>
+        <input id="evl-email" class="form-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="evl-proyecto">Descripción del proyecto</label>
+        <textarea id="evl-proyecto" class="form-textarea" name="proyecto" rows="4" placeholder="Cuéntanos brevemente de qué se trata el proyecto..." required></textarea>
+      </div>
+      <div class="form-divider"></div>
+      <button type="submit" class="form-submit" style="background:linear-gradient(135deg,#7A5C1E 0%,#B8872A 100%)">
+        Solicitar evaluación gratuita <span class="arrow">→</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-email"><a href="mailto:info@hondiven.com" style="color:inherit;text-decoration:none">info@hondiven.com</a></div>
+    <div class="footer-phone" style="color:#B8872A">+51 992030112</div>
+    <div class="footer-links">
+      <a href="https://linkedin.com/company/hondiven" target="_blank" rel="noopener" aria-label="LinkedIn HONDIVEN">LinkedIn ↗</a>
+      <a href="https://wa.me/51992030112" target="_blank" rel="noopener" aria-label="WhatsApp HONDIVEN">WhatsApp: +51 992030112 ↗</a>
+    </div>
+    <div class="footer-copy">HONDIVEN © 2026 — Todos los derechos reservados</div>
+  </footer>
+
+</div>
+
+
+<!-- ════════════════════════════════════
      HONDIVEN TRANSPORTE
 ════════════════════════════════════ -->
 <div id="sec-transporte" class="brand-section" style="--accent:#00A86B;--form-accent:#00A86B;background:#FFFFFF;color:#111111">
@@ -3438,7 +3799,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 
   <!-- SERVICIOS: EMPRESAS vs TRANSPORTISTAS -->
   <div class="sec-header"><h2 class="sec-title" style="color:#0B3D2E">PARA QUIÉN TRABAJAMOS</h2></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:960px;margin:0 auto 60px;padding:0 24px">
+  <div class="transp-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:960px;margin:0 auto 60px;padding:0 24px">
     <div style="background:#f7f9f7;border-radius:8px;padding:32px;border-top:4px solid #0B3D2E">
       <div style="font-size:11px;letter-spacing:0.12em;color:#0B3D2E;font-weight:700;text-transform:uppercase;margin-bottom:12px">Para Empresas</div>
       <div style="font-size:20px;font-weight:800;color:#111;margin-bottom:16px">Necesitas mover carga sin riesgos</div>
@@ -3497,7 +3858,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
   <!-- CÓMO TRABAJAMOS -->
   <div class="how-section">
     <div class="sec-header"><h2 class="sec-title" style="color:#0B3D2E">CÓMO TRABAJAMOS</h2><span style="font-size:12px;color:rgba(0,0,0,0.45);letter-spacing:0.12em;text-transform:uppercase">6 pasos. Sin improviso.</span></div>
-    <div class="how-grid" style="grid-template-columns:repeat(6,1fr)">
+    <div class="how-grid how-grid--6">
       <div class="how-card"><div class="how-step" data-n="1">Paso</div><div class="how-name">Cotización</div><div class="how-desc">Recibes propuesta en menos de 24h con ruta, tarifa y condiciones claras.</div></div>
       <div class="how-card"><div class="how-step" data-n="2">Paso</div><div class="how-name">Asignación</div><div class="how-desc">Seleccionamos la unidad y conductor más adecuados para tu carga y ruta.</div></div>
       <div class="how-card"><div class="how-step" data-n="3">Paso</div><div class="how-name">Despacho</div><div class="how-desc">Generamos la documentación completa y confirmamos el retiro de carga.</div></div>
@@ -4338,6 +4699,8 @@ function switchBrand(brand) {
   const ceepBgImg = document.getElementById('ceep-bg-img');
   const glBgImg   = document.getElementById('gl-bg-img');
   const construccionBgImg = document.getElementById('construccion-bg-img');
+  const transporteBgImg = document.getElementById('transporte-bg-img');
+  const evaluacionBgImg = document.getElementById('evaluacion-bg-img');
 
   sections.forEach(s => s.classList.remove('active'));
   bannerShown = false;
@@ -4350,11 +4713,11 @@ function switchBrand(brand) {
     selector.classList.remove('minimized');
     panels.forEach(p => p.classList.remove('active-brand'));
     selLogo.classList.remove('brand-active');
-    ceepBgImg.classList.remove('visible');
-    glBgImg.classList.remove('visible');
+    if (ceepBgImg) ceepBgImg.classList.remove('visible');
+    if (glBgImg) glBgImg.classList.remove('visible');
     if (construccionBgImg) construccionBgImg.classList.remove('visible');
-    const tBgImg = document.getElementById('transporte-bg-img');
-    if (tBgImg) tBgImg.classList.remove('visible');
+    if (transporteBgImg) transporteBgImg.classList.remove('visible');
+    if (evaluacionBgImg) evaluacionBgImg.classList.remove('visible');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
   } else if (brand === 'ceep') {
@@ -4362,11 +4725,12 @@ function switchBrand(brand) {
     selector.classList.add('minimized');
     panels.forEach(p => p.classList.remove('active-brand'));
     document.querySelector('.sel-panel.ceep').classList.add('active-brand');
-    document.getElementById('transporte-bg-img').classList.remove('visible');
     selLogo.classList.add('brand-active');
-    ceepBgImg.classList.add('visible');
-    glBgImg.classList.remove('visible');
+    if (ceepBgImg) ceepBgImg.classList.add('visible');
+    if (glBgImg) glBgImg.classList.remove('visible');
     if (construccionBgImg) construccionBgImg.classList.remove('visible');
+    if (transporteBgImg) transporteBgImg.classList.remove('visible');
+    if (evaluacionBgImg) evaluacionBgImg.classList.remove('visible');
     setTimeout(() => {
       const content = document.getElementById('content');
       const top = content.getBoundingClientRect().top + window.scrollY - 72;
@@ -4378,11 +4742,12 @@ function switchBrand(brand) {
     selector.classList.add('minimized');
     panels.forEach(p => p.classList.remove('active-brand'));
     document.querySelector('.sel-panel.gl').classList.add('active-brand');
-    document.getElementById('transporte-bg-img').classList.remove('visible');
     selLogo.classList.add('brand-active');
-    glBgImg.classList.add('visible');
-    ceepBgImg.classList.remove('visible');
+    if (glBgImg) glBgImg.classList.add('visible');
+    if (ceepBgImg) ceepBgImg.classList.remove('visible');
     if (construccionBgImg) construccionBgImg.classList.remove('visible');
+    if (transporteBgImg) transporteBgImg.classList.remove('visible');
+    if (evaluacionBgImg) evaluacionBgImg.classList.remove('visible');
     setTimeout(() => {
       const content = document.getElementById('content');
       const top = content.getBoundingClientRect().top + window.scrollY - 72;
@@ -4394,11 +4759,11 @@ function switchBrand(brand) {
     panels.forEach(p => p.classList.remove('active-brand'));
     document.querySelector('.sel-panel.transporte').classList.add('active-brand');
     selLogo.classList.add('brand-active');
-    const transporteBgImg = document.getElementById('transporte-bg-img');
     if (transporteBgImg) transporteBgImg.classList.add('visible');
-    ceepBgImg.classList.remove('visible');
-    glBgImg.classList.remove('visible');
+    if (ceepBgImg) ceepBgImg.classList.remove('visible');
+    if (glBgImg) glBgImg.classList.remove('visible');
     if (construccionBgImg) construccionBgImg.classList.remove('visible');
+    if (evaluacionBgImg) evaluacionBgImg.classList.remove('visible');
     setTimeout(() => {
       const content = document.getElementById('content');
       const top = content.getBoundingClientRect().top + window.scrollY - 72;
@@ -4412,10 +4777,27 @@ function switchBrand(brand) {
     document.querySelector('.sel-panel.construccion').classList.add('active-brand');
     selLogo.classList.add('brand-active');
     if (construccionBgImg) construccionBgImg.classList.add('visible');
-    ceepBgImg.classList.remove('visible');
-    glBgImg.classList.remove('visible');
-    const transporteBgImg2 = document.getElementById('transporte-bg-img');
-    if (transporteBgImg2) transporteBgImg2.classList.remove('visible');
+    if (ceepBgImg) ceepBgImg.classList.remove('visible');
+    if (glBgImg) glBgImg.classList.remove('visible');
+    if (transporteBgImg) transporteBgImg.classList.remove('visible');
+    if (evaluacionBgImg) evaluacionBgImg.classList.remove('visible');
+    setTimeout(() => {
+      const content = document.getElementById('content');
+      const top = content.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 420);
+
+  } else if (brand === 'evaluacion') {
+    document.getElementById('sec-evaluacion').classList.add('active');
+    selector.classList.add('minimized');
+    panels.forEach(p => p.classList.remove('active-brand'));
+    document.querySelector('.sel-panel.evaluacion').classList.add('active-brand');
+    selLogo.classList.add('brand-active');
+    if (evaluacionBgImg) evaluacionBgImg.classList.add('visible');
+    if (ceepBgImg) ceepBgImg.classList.remove('visible');
+    if (glBgImg) glBgImg.classList.remove('visible');
+    if (construccionBgImg) construccionBgImg.classList.remove('visible');
+    if (transporteBgImg) transporteBgImg.classList.remove('visible');
     setTimeout(() => {
       const content = document.getElementById('content');
       const top = content.getBoundingClientRect().top + window.scrollY - 72;
@@ -4431,7 +4813,10 @@ function switchBrand(brand) {
 const FORMSPREE_IDS = {
   hondiven: 'xpwzqnkv',   // ← replace with your Formspree ID
   ceep:     'xpwzqnkv',   // ← replace with your Formspree ID
-  gl:       'xpwzqnkv'    // ← replace with your Formspree ID
+  gl:       'xpwzqnkv',    // ← replace with your Formspree ID
+  evaluacion: 'xpwzqnkv',
+  construccion: 'xpwzqnkv',
+  transporte: 'xpwzqnkv'
 };
 
 function showToast(form, accentColor, message) {
@@ -4481,7 +4866,7 @@ async function handleForm(e, brand) {
   const btn = form.querySelector('.form-submit');
   const orig = btn.innerHTML;
   const origBg = btn.style.background;
-  const accentColors = { hondiven: '#A8B4BC', ceep: '#E8550A', gl: '#D0103A' };
+  const accentColors = { hondiven: '#A8B4BC', ceep: '#E8550A', gl: '#D0103A', evaluacion: '#B8872A', construccion: '#0045e6', transporte: '#00A86B' };
   const accent = accentColors[brand] || '#E8550A';
 
   // Show sending state
