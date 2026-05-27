@@ -713,6 +713,9 @@ body {
   gap: 0;
   padding: 52px 80px;
 }
+.how-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.how-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.how-grid--5 { grid-template-columns: repeat(5, 1fr); }
 
 .how-card {
   padding: 32px 24px 32px 0;
@@ -1358,7 +1361,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
   .banner-text { font-size: 13px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Hero selector stacks vertically on small screens */
   #selector:not(.minimized) { flex-direction: column; height: auto; min-height: 100svh; }
   #selector:not(.minimized) .sel-logo { flex: 0 0 auto; padding: 40px 24px 20px; }
@@ -1828,7 +1831,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
    =============================================================== */
 
 /* -- NAVEGACION MINIMIZADA EN MOVIL -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #selector.minimized .sel-logo {
     flex: 0 0 110px !important;
     width: 110px !important;
@@ -1864,143 +1867,143 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 }
 
 /* -- HOOK / HERO -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hook-left { width: 100%; padding: 56px 20px 36px; min-height: 460px; }
-  .hook-left .hook-title { font-size: clamp(30px, 9vw, 52px) !important; line-height: 1 !important; }
-  .hook-left .hook-tag { font-size: 10px; }
-  .hook-left .hook-right p { font-size: 13px; line-height: 1.65; }
+  .hook-left .hook-title { font-size: clamp(34px, 9vw, 56px) !important; line-height: 1.05 !important; }
+  .hook-left .hook-tag { font-size: 11px; }
+  .hook-left .hook-right p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.85); }
   .hook-hero-img::after {
     background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 100%);
   }
 }
 
 /* -- METRICAS -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .metrics { grid-template-columns: 1fr 1fr; }
   .metric-card { padding: 24px 16px; }
-  .metric-val { font-size: clamp(26px, 8vw, 44px) !important; }
-  .metric-label { font-size: 10px; letter-spacing: 0.1em; }
+  .metric-val { font-size: clamp(28px, 8vw, 48px) !important; }
+  .metric-label { font-size: 11px; letter-spacing: 0.1em; }
 }
 
 /* -- SEC-HEADER -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sec-header { padding: 38px 20px 12px; flex-direction: column; align-items: flex-start; gap: 6px; }
-  .sec-title { font-size: clamp(28px, 8vw, 48px) !important; line-height: 1.05; }
+  .sec-title { font-size: clamp(30px, 8vw, 52px) !important; line-height: 1.05; }
 }
 
 /* -- SERVICES LIST -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .service-row { padding: 18px 20px; grid-template-columns: 38px 1fr; gap: 10px; }
-  .service-name { font-size: clamp(17px, 5vw, 26px) !important; }
-  .service-desc { font-size: 12px; }
+  .service-name { font-size: clamp(18px, 5vw, 28px) !important; }
+  .service-desc { font-size: 14px; color: rgba(255,255,255,0.7); }
   .service-kpi { display: none; }
   .service-expand-content { padding: 0 0 0 32px; }
   .service-expandable.open .service-expand-content { padding: 10px 0 14px 32px; }
 }
 
 /* -- RESULTS TABS -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .results-tabs-header { padding: 38px 20px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
   .results-tab-panels { padding: 0 20px; }
-  .rtab { padding: 12px 14px; font-size: 11px; letter-spacing: 0.07em; }
+  .rtab { padding: 12px 14px; font-size: 12px; letter-spacing: 0.07em; }
   .rtab-panel.active { grid-template-columns: 1fr; }
   .result-item { padding: 22px 0; }
   .result-item:nth-child(even) { padding-left: 0; border-left: none; }
-  .result-num { font-size: clamp(26px, 7vw, 42px) !important; min-width: 56px; }
-  .result-title { font-size: 15px; }
-  .result-desc { font-size: 12px; }
+  .result-num { font-size: clamp(28px, 7vw, 44px) !important; min-width: 56px; }
+  .result-title { font-size: 16px; }
+  .result-desc { font-size: 14px; }
 }
 
 /* -- HOW GRID -- */
-@media (max-width: 768px) {
-  .how-grid { grid-template-columns: 1fr; padding: 28px 20px; gap: 0; }
+@media (max-width: 1024px) {
+  .how-grid, .how-grid--3, .how-grid--4, .how-grid--5, .how-grid--6 { grid-template-columns: 1fr !important; padding: 28px 20px; gap: 0; }
   .how-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 20px 0; }
   .how-card:last-child { border-bottom: none; }
   .how-card:not(:last-child)::after { display: none; }
-  .how-name { font-size: 17px; }
-  .how-desc { font-size: 12px; }
+  .how-name { font-size: 18px; }
+  .how-desc { font-size: 14px; color: rgba(255,255,255,0.7); }
 }
 
 /* -- WHY CARDS -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .why-grid { grid-template-columns: 1fr 1fr; padding: 28px 20px; gap: 2px; }
   .why-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 18px 14px; }
   .why-card:last-child { border-bottom: none; }
-  .why-card-title { font-size: 15px; }
-  .why-card-desc { font-size: 11px; }
+  .why-card-title { font-size: 16px; }
+  .why-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); }
 }
 @media (max-width: 420px) {
   .why-grid { grid-template-columns: 1fr; }
 }
 
 /* -- DIFF SECTION -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .diff-section { grid-template-columns: 1fr; }
   .diff-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 38px 20px; }
   .diff-right { padding: 36px 20px; }
-  .diff-title { font-size: clamp(22px, 6vw, 36px) !important; }
-  .diff-body { font-size: 13px; }
-  .diff-pillar-name { font-size: 15px; }
-  .diff-pillar-sub { font-size: 11px; }
+  .diff-title { font-size: clamp(24px, 6vw, 40px) !important; }
+  .diff-body { font-size: 14px; }
+  .diff-pillar-name { font-size: 16px; }
+  .diff-pillar-sub { font-size: 13px; }
 }
 
 /* -- CLIENTS MARQUEE -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .clients-section { padding: 36px 0; }
-  .clients-intro { padding: 0 20px; font-size: 13px; margin-bottom: 20px; }
-  .marquee-item { font-size: clamp(15px, 4vw, 20px); padding: 0 24px; height: 58px; }
+  .clients-intro { padding: 0 20px; font-size: 14px; margin-bottom: 20px; }
+  .marquee-item { font-size: clamp(16px, 4vw, 22px); padding: 0 24px; height: 58px; }
   .marquee-dot { width: 4px; height: 4px; margin-right: 10px; }
 }
 
 /* -- CLOSING CTA -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .closing { grid-template-columns: 1fr; }
   .closing-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 40px 20px; }
   .closing-right { padding: 36px 20px; }
-  .closing-title { font-size: clamp(26px, 8vw, 46px) !important; }
-  .closing-sub { font-size: 10px; }
-  .closing-pill { font-size: 13px; }
-  .btn-primary, .btn-outline { width: 100%; justify-content: center; padding: 16px 20px; font-size: 13px; }
+  .closing-title { font-size: clamp(28px, 8vw, 50px) !important; }
+  .closing-sub { font-size: 13px; }
+  .closing-pill { font-size: 14px; }
+  .btn-primary, .btn-outline { width: 100%; justify-content: center; padding: 16px 20px; font-size: 14px; }
 }
 
 /* -- CONTACT FORM -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact-section { padding: 48px 20px 68px; }
-  .contact-title { font-size: clamp(26px, 7vw, 46px) !important; }
-  .contact-sub { font-size: 13px; margin-bottom: 32px; }
+  .contact-title { font-size: clamp(28px, 7vw, 50px) !important; }
+  .contact-sub { font-size: 14px; margin-bottom: 32px; }
   .contact-form { padding: 24px 16px; }
   .form-row { grid-template-columns: 1fr; }
   .form-input, .form-select, .form-textarea { font-size: 16px; padding: 13px 14px; }
-  .form-label { font-size: 10px; }
-  .form-submit { font-size: 15px; padding: 16px 20px; }
+  .form-label { font-size: 11px; }
+  .form-submit { font-size: 16px; padding: 16px 20px; }
 }
 
 /* -- FOOTER -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   footer { padding: 36px 20px 24px; }
-  .footer-phone { font-size: clamp(26px, 8vw, 46px) !important; }
+  .footer-phone { font-size: clamp(28px, 8vw, 50px) !important; }
   .footer-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
-  .footer-links a { font-size: 11px; }
-  .footer-email { font-size: 12px; }
+  .footer-links a { font-size: 12px; }
+  .footer-email { font-size: 13px; }
 }
 
 /* -- BANNER STICKY -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .banner-inner { padding: 12px 16px; gap: 8px; flex-wrap: wrap; }
-  .banner-text { font-size: 12px; width: 100%; order: 1; }
-  .banner-cta { order: 2; padding: 8px 16px; font-size: 11px; }
+  .banner-text { font-size: 13px; width: 100%; order: 1; }
+  .banner-cta { order: 2; padding: 8px 16px; font-size: 12px; }
   .banner-close { order: 3; font-size: 16px; }
 }
 
 /* -- SECTORES / QUIENES (CONSTRUCCION) -- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sectores-grid { grid-template-columns: 1fr 1fr; }
   .quienes-section { padding: 36px 20px; }
   .quienes-cards { grid-template-columns: 1fr; }
-  .sector-name { font-size: 12px; }
-  .sector-detail { font-size: 11px; }
-  .quien-card-title { font-size: 16px; }
-  .quien-card-desc { font-size: 12px; }
+  .sector-name { font-size: 13px; }
+  .sector-detail { font-size: 13px; }
+  .quien-card-title { font-size: 17px; }
+  .quien-card-desc { font-size: 14px; }
 }
 @media (max-width: 420px) {
   .sectores-grid { grid-template-columns: 1fr; }
@@ -2021,17 +2024,45 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
 @media (max-width: 1100px) {
   .how-grid--6 { grid-template-columns: repeat(3, 1fr) !important; }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .how-grid--6 { grid-template-columns: 1fr !important; }
   .transp-two-col { grid-template-columns: 1fr !important; gap: 20px !important; padding: 0 16px !important; }
 }
 
 /* -- INLINE GRIDS (transporte) en movil -- alta especificidad */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #sec-transporte .how-grid {
     grid-template-columns: 1fr !important;
     padding: 24px 16px !important;
   }
+}
+
+/* ===============================================================
+   MÓVILES HORIZONTALES (LANDSCAPE) - max-height: 500px
+   =============================================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hook { padding: 40px 20px !important; min-height: auto !important; }
+  .hook-left { padding: 40px 20px !important; min-height: auto !important; width: 100% !important; }
+  .hook-title { font-size: clamp(32px, 8vh, 56px) !important; line-height: 1.05 !important; }
+  .sec-title { font-size: clamp(30px, 8vh, 48px) !important; }
+
+  .hook-left .hook-right p, 
+  .service-desc, 
+  .result-desc, 
+  .how-desc, 
+  .why-card-desc, 
+  .diff-body,
+  .contact-sub { 
+    font-size: 14px !important; 
+    line-height: 1.5 !important; 
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  .hook-right { position: static !important; margin-top: 20px !important; max-width: 100% !important; }
+  .how-name, .why-card-title, .service-name { font-size: 18px !important; font-weight: 800 !important; }
+  .metric-label { font-size: 11px !important; letter-spacing: 0.12em !important; }
+  .sec-header { padding: 32px 20px 12px !important; }
+  .how-grid, .why-grid { padding: 24px 20px !important; gap: 12px !important; }
 }
 
 </style>
@@ -2190,13 +2221,13 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     #hn-nav .hn-cta { font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0a0a0a !important;background:#D4A843;padding:8px 18px;border-radius:2px;text-decoration:none;white-space:nowrap;transition:background 0.2s; }
     #hn-nav .hn-cta:hover { background:#F0C85A; }
     /* Mobile: ocultar links, mostrar solo logo y CTA */
-    @media (max-width:768px) {
+    @media (max-width:1024px) {
       #hn-nav { padding:0 20px;gap:1rem; }
       #hn-nav .hn-links { display:none; }
     }
     /* Botón flotante mobile */
     #hn-mobile-fab { display:none;position:fixed;bottom:0;left:0;right:0;z-index:1100;background:linear-gradient(135deg,#D4A843,#F0C85A);color:#0a0a0a;text-align:center;padding:14px;font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none; }
-    @media (max-width:768px) { #hn-mobile-fab { display:block; } }
+    @media (max-width:1024px) { #hn-mobile-fab { display:block; } }
   </style>
 
   <nav id="hn-nav" role="navigation" aria-label="Navegación HONDIVEN">
@@ -3987,7 +4018,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     <!-- MODELO END TO END -->
     <div class="sec-header"><h2 class="sec-title">MODELO HONDIVEN</h2><span style="font-size:12px;color:rgba(0,0,0,0.5);letter-spacing:0.12em;text-transform:uppercase">Un solo sistema. Un solo responsable.</span></div>
     <div class="how-section">
-      <div class="how-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="how-grid how-grid--5">
         <div class="how-card">
           <div class="how-step" data-n="1">Fase</div>
           <div class="how-name">Evaluación</div>
@@ -4475,7 +4506,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     <div class="sec-header" style="background:#F2EAE3; border-bottom:1px solid rgba(19,18,17,0.1)">
       <h2 class="sec-title" style="color:#131211;font-size:clamp(32px,5vw,64px)">Tu empresa NO tiene un problema de marketing… Tiene un problema de ingresos.</h2>
     </div>
-    <div class="how-grid" style="background:#F2EAE3; grid-template-columns: repeat(3, 1fr);">
+    <div class="how-grid how-grid--3" style="background:#F2EAE3;">
       <div class="how-card" style="background:rgba(255,7,58,0.06);border:1px solid rgba(255,7,58,0.3);border-radius:4px;padding:40px;">
         <div class="how-name" style="color:#131211">Ventas desordenadas</div>
       </div>
@@ -4489,7 +4520,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
   </div>
 
   <!-- EL NUEVO ESTÁNDAR -->
-  <div class="hook" style="background:#F2EAE3; border-top:1px solid rgba(19,18,17,0.1); padding:80px">
+  <div class="hook" style="background:#F2EAE3; border-top:1px solid rgba(19,18,17,0.1);">
     <div class="hook-tag" style="color:#FF073A">EL NUEVO ESTÁNDAR</div>
     <h2 class="hook-title" style="color:#131211; font-size:clamp(40px,7vw,100px)">Nos convertimos en el <span style="color:#FF073A">sistema de crecimiento</span> de tu empresa</h2>
     <p style="color:rgba(19,18,17,0.7); font-size:18px; font-weight:600; margin-top:16px;">No somos proveedores. Somos tu Revenue Partner.</p>
@@ -4500,7 +4531,7 @@ footer { padding: 60px 80px 40px; text-align: center; border-top: 1px solid rgba
     <div class="sec-header" style="background:#F2EAE3; border-bottom:1px solid rgba(19,18,17,0.1)">
       <h2 class="sec-title" style="color:#131211">Nuestro diferencial</h2>
     </div>
-    <div class="how-grid" style="background:#F2EAE3; grid-template-columns: repeat(4, 1fr); padding:0;">
+    <div class="how-grid how-grid--4" style="background:#F2EAE3; padding:0;">
       <div class="how-card" style="border-right:1px solid rgba(19,18,17,0.1); padding: 40px; border-bottom: none;">
         <div style="font-family:monospace; color:#FF073A; margin-bottom:10px;">[01]</div>
         <div class="how-name" style="color:#131211">Análisis estratégico</div>
